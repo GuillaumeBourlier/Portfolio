@@ -7,7 +7,7 @@ function Navbar() {
       <ul>
         <li><Link to="/">Accueil</Link></li>
         <li><Link to="/competencies">Compétences</Link></li>
-        <li><Link to="/projects">Mes Projets</Link></li>
+        <li><Link to="/projects">Projets</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>

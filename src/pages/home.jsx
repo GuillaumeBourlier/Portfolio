@@ -2,18 +2,22 @@ import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import photo from "../assets/photo.webp";
+import myCV from "../assets/CV-Guillaume-Bourlier.pdf";
 
 function Home() {
   return (
-    <section className="about-section" id="about">
+    <section className="about-section" id="home">
       <div className="profile-column">
         <div className="image-wrapper">
           <img src={photo} alt="Portrait de Guillaume Bourlier" />
         </div>
         <div className="content">
+          <h1>Guillaume Bourlier</h1>
+          <p>Développeur Front-End</p>
+
           <div className="social-icons">
             <a
-              href="*" // ajouter mon lien GitHub
+              href="https://github.com/ton-profil" 
               target="_blank"
               rel="noreferrer"
               aria-label="Profil GitHub"
@@ -21,7 +25,7 @@ function Home() {
               <GitHubIcon fontSize="large" />
             </a>
             <a
-              href="*" // ajouter mon lien LinkedIn
+              href="https://linkedin.com/in/ton-profil" 
               target="_blank"
               rel="noreferrer"
               aria-label="Profil LinkedIn"
@@ -29,8 +33,14 @@ function Home() {
               <LinkedInIcon fontSize="large" />
             </a>
           </div>
-          <h1>Guillaume Bourlier</h1>
-          <p>Développeur Front-End</p>
+
+          <a
+            href={myCV}
+            download="CV-Guillaume-Bourlier.pdf"
+            className="cv-button"
+          >
+            Télécharger mon CV
+          </a>
         </div>
       </div>
 
