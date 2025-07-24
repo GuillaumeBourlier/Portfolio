@@ -1,7 +1,13 @@
+import React from "react";
+import logo from "../assets/logo.webp";
+
 function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; 2025 Guillaume Bourlier. Tous droits réservés.</p>
+      <div className="footer-content">
+        <img src={logo} alt="Logo" className="footer-logo" />
+        <p>Développeur Web Front-End</p>
+      </div>
     </footer>
   );
 }
