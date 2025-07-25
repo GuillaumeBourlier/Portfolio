@@ -1,18 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/home';
-import Competencies from './pages/competencies';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/NavBar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/HomePage/home";
+import Competencies from "./pages/CompetenciesPage/competencies";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 function App() {
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true
+      }}
+    >
       <div className="app">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/competencies" element={<Competencies />} />
+          <Route path="/" element={<Home />} errorElement={<ErrorPage />} />
+          <Route path="/competencies" element={<Competencies />} errorElement={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} /> 
         </Routes>
         <Footer />
       </div>

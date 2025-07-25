@@ -1,44 +1,31 @@
+@use '../layout/variables' as *;
+@use '../layout/mixins' as *;
+
 .home-section {
+  @include background-overlay(true);
+  padding: $spacing-xxl;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
-  padding: 3rem;
-  gap: 2rem;
+  gap: $spacing-sm;
   min-height: 92vh;
-  background-image: url('../../assets/img_background.webp');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  position: relative;
-  z-index: 0;
 
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.74);
-    backdrop-filter: blur(3px); 
-    z-index: -1;
-  }
 
   .home-column {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: $container-xxs;
+    margin-left: $spacing-xxl;
 
     .image-wrapper {
-      width: 250px;
-      height: 250px;
-      border-radius: 60%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
       overflow: hidden;
-      margin-bottom: 0.2rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.1rem;
+      box-shadow: $shadow-default;
 
       img {
         width: 100%;
@@ -49,149 +36,93 @@
 
     .content {
       text-align: center;
-      background-color: rgba(11, 12, 12, 0.1);
-      padding: 1.2rem;
-      border-radius: 10px;
+      background-color: $background-light;
+      padding: $spacing-xs;
+      border-radius: $border-radius-sm;
+      width: 100%;
 
       h1 {
-        font-size: 2rem;
+        font-size: $font-size-md;
         margin: 0.5rem 0;
-        color: #f5f5f5;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        color: $text-color;
+        text-shadow: $shadow-text;
       }
 
       .subtitle {
-        font-size: 1.5rem;
-        color: #e0e0e0;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-        margin: 1rem;
+        font-size: $font-size-xs;
+        color: $text-secondary;
+        text-shadow: $shadow-text;
+        margin: 1.6rem 0;
       }
 
       .icons {
         display: flex;
         justify-content: center;
-        gap: 2rem;
-        margin-top: 1rem;
+        gap: $spacing-sm;
+        margin-top: $spacing-xxs;
 
         a {
-          color: #ffffff;
+          color: $text-color;
           transition: color 0.3s;
 
           &:hover {
-            color: #61dafb;
+            color: $primary-color;
           }
         }
       }
 
       .cv-button {
+        @include button-style;
+        font-size: $font-size-xxs;
         display: inline-block;
-        margin-top: 1.5rem;
-        padding: 0.8rem 1.5rem;
-        background-color: #61dafb;
-        color: #000000;
-        font-weight: bold;
+        margin-top: $spacing-sm;
         text-decoration: none;
-        border-radius: 8px;
-        transition: all 0.3s ease;
 
         &:hover {
-          background-color: #549ef1c2;
+          background-color: rgba($primary-hover-color, 0.76);
           transform: translateY(-5px);
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
         }
       }
     }
   }
 
   .about {
-    max-width: 800px;
-    text-align: center;
-    background-color: rgba(11, 12, 12, 0.1);
-    border-radius: 10px;
+    flex: 2;
+    max-width: $container-lg;
+    background-color: $background-light;
+    border-radius: $border-radius-sm;
+    padding: $spacing-xs;
+    margin-top: $spacing-lg;
+    margin-left: auto;
+    margin-right: auto;
 
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #f5f5f5;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-xxs;
+      color: $text-color;
+      text-shadow: $shadow-text;
     }
 
     p {
-      font-size: 1.4rem;
-      line-height: 1.6;
-      color: #e0e0e0;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-size: $font-size-xs;
+      line-height: 1.8;
+      color: $text-secondary;
+      text-shadow: $shadow-text;
     }
   }
 
+  @include respond-to(md) {
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-sm $spacing-xxs;
 
-  @media (min-width: 1601px) {
-    padding: 5rem;
-    gap: 3rem;
-
-    .home-column .content {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .subtitle {
-        font-size: 1.8rem;
-      }
-    }
-
-    .about p {
-      font-size: 1.6rem;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    padding: 3rem 2rem;
-    gap: 2rem;
-
-    .home-column .image-wrapper {
-      width: 220px;
-      height: 220px;
-    }
-
-    .about p {
-      font-size: 1.3rem;
-    }
-  }
-
-  @media (max-width: 768px) { 
-    padding: 2.5rem 1rem;
-    gap: 1.5rem;
-    background-attachment: scroll; 
-
-    .home-column {
-      .image-wrapper {
-        width: 180px;
-        height: 180px;
-      }
-
-      .content {
-        padding: 1rem;
-        h1 {
-          font-size: 1.8rem;
-        }
-        .subtitle {
-          font-size: 1.2rem;
-        }
-        .cv-button {
-          padding: 0.7rem 1.4rem;
-          font-size: 1rem;
-        }
-      }
-    }
-
+    .home-column,
     .about {
-      padding: 0 1rem;
-      h2 {
-        font-size: 1.6rem;
-      }
-      p {
-        font-size: 1.1rem;
-      }
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 }

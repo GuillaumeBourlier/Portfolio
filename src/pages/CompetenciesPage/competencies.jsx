@@ -1,5 +1,5 @@
 import React from "react";
-import reduxLogo from "../assets/redux.webp";
+import reduxLogo from "../../assets/redux.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHtml5,

@@ -1,0 +1,88 @@
+@use './variables' as *;
+
+@mixin background-overlay($blur: false) {
+  background-image: url("@/assets/img_background.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $background-dark;
+    @if $blur {
+      backdrop-filter: blur(3px);
+    }
+    z-index: -1;
+  }
+}
+
+// Mixin pour les cartes
+@mixin card-style($background: white) {
+  background-color: $background;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-hover-tech;
+  }
+}
+
+// Mixin pour les boutons
+@mixin button-style($background: $primary-color) {
+  padding: 0.6rem 1.2rem;
+  background-color: $background;
+  color: $text-dark;
+  font-weight: bold;
+  border: none;
+  border-radius: $border-radius-xs;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $primary-hover-color;
+    transform: translateY(-2px);
+  }
+}
+
+// Mixin pour les champs de formulaire
+@mixin form-field {
+  width: 100%;
+  padding: $spacing-xxs;
+  font-size: $font-size-xxs;
+  border: 1px solid #ddd;
+  border-radius: $border-radius-sm;
+  font-family: inherit;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba($primary-color, 0.4);
+  }
+}
+
+// Mixin pour les media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xl {
+    @media (min-width: $screen-xl) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: $screen-lg) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: $screen-md) { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media (max-width: $screen-sm) { @content; }
+  }
+}
