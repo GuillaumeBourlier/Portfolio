@@ -18,7 +18,7 @@ const Contact = () => {
           <p>
             Actuellement à la recherche de nouvelles opportunités
             professionnelles, je suis ouvert aux collaborations en tant que
-            freelance ainsi qu'aux postes de développeur junior au sein d'une
+            freelance ainsi qu'au poste de développeur junior au sein d'une
             entreprise. Passionné par le développement et la création de
             solutions innovantes, je suis déterminé à apporter ma rigueur et ma
             créativité à vos projets. N'hésitez pas à me contacter pour discuter
