@@ -10,7 +10,7 @@ function Footer() {
           alt="Logo de Guillaume Bourlier"
           className="footer-logo"
         />
-        <p>Développeur Web Front-End</p>
+        <p>- Développeur Web Front-End</p>
       </div>
     </footer>
   );

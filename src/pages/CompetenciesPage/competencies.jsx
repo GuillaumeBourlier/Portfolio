@@ -16,15 +16,14 @@ const techs = [
   { label: "Redux", icon: reduxLogo, type: "webp" },
 ];
 
-const upcomingSkills = ["Next.js", "Tailwind CSS",];
+const upcomingSkills = ["Next.js",];
 
 const Competencies = () => {
   return (
     <section id="competencies" className="competencies">
       <h2>Mes Compétences</h2>
       <p className="competencies-intro">
-        Voici un aperçu des technologies que j’utilise régulièrement dans mes
-        projets
+        Voici un aperçu des technologies que j’utilise dans mes projets
       </p>
 
       <ul className="tech-list">

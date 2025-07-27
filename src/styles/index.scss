@@ -1,8 +1,11 @@
-@use './components/navbar';
-@use './components/footer';
-@use './pages/home';
-@use './pages/competencies';
-
+@use "./components/navbar";
+@use "./components/footer";
+@use "./pages/home";
+@use "./pages/competencies";
+@use "./pages/error";
+@use "./pages/contact";
+@use "./components/modal";
+@use "./components/cards";
 
 * {
   margin: 0;
@@ -10,16 +13,27 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Montserrat", sans-serif;
+html, body {
+  font-family: "Plus Jakarta Sans", sans-serif;
   background-color: #f5f5f5;
   color: #333;
+  height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  margin-top: 60px; // Hauteur de la navbar
 }
 
 @include respond-to(md) {

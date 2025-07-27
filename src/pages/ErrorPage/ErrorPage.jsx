@@ -1,8 +1,11 @@
 export default function ErrorPage() {
   return (
-    <div className="error-page">
-      <p>Désolé, une erreur s'est produite.</p>
-      <a href="/">Retour à l'accueil</a>
-    </div>
+    <main className="error-page">
+      <h1 className="error-page__title">Erreur 404</h1>
+      <h2 className="error-page__message">
+        La page que vous recherchez est introuvable ou a été déplacée
+      </h2>
+      <a href="/" className="error-page__link">Retourner à l'accueil</a>
+    </main>
   );
 }

@@ -24,7 +24,7 @@
   }
 }
 
-// Mixin pour les cartes
+
 @mixin card-style($background: white) {
   background-color: $background;
   border-radius: $border-radius-sm;
@@ -37,7 +37,6 @@
   }
 }
 
-// Mixin pour les boutons
 @mixin button-style($background: $primary-color) {
   padding: 0.6rem 1.2rem;
   background-color: $background;
@@ -54,7 +53,7 @@
   }
 }
 
-// Mixin pour les champs de formulaire
+
 @mixin form-field {
   width: 100%;
   padding: $spacing-xxs;
@@ -71,7 +70,7 @@
   }
 }
 
-// Mixin pour les media queries
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == xl {
     @media (min-width: $screen-xl) { @content; }

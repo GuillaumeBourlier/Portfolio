@@ -3,28 +3,57 @@
 
 .home-section {
   @include background-overlay(true);
-  padding: $spacing-xxl;
+  padding: $spacing-xl $spacing-md;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  gap: $spacing-sm;
-  min-height: 92vh;
+  flex-direction: column;
+  align-items: center;
+  min-height: auto;
+  width: 100%;
+  box-sizing: border-box;
 
+  .top-section {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    width: 100%;
+    margin-bottom: $spacing-lg;
+    flex-wrap: wrap;
+
+    @include respond-to(md) {
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-lg;
+    }
+  }
+
+  .bottom-section {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    width: 100%;
+    max-width: $container-xl;
+    flex-wrap: wrap;
+
+    @include respond-to(md) {
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+  }
 
   .home-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: $container-xxs;
-    margin-left: $spacing-xxl;
+    width: 100%;
+    max-width: $container-xxs;
+    box-sizing: border-box;
 
     .image-wrapper {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       overflow: hidden;
-      margin-bottom: 0.1rem;
+      margin-bottom: $spacing-xs;
       box-shadow: $shadow-default;
 
       img {
@@ -37,13 +66,15 @@
     .content {
       text-align: center;
       background-color: $background-light;
-      padding: $spacing-xs;
+      padding: $spacing-sm;
       border-radius: $border-radius-sm;
       width: 100%;
+      box-sizing: border-box;
+      word-wrap: break-word;
 
       h1 {
         font-size: $font-size-md;
-        margin: 0.5rem 0;
+        margin: $spacing-xs 0;
         color: $text-color;
         text-shadow: $shadow-text;
       }
@@ -52,14 +83,15 @@
         font-size: $font-size-xs;
         color: $text-secondary;
         text-shadow: $shadow-text;
-        margin: 1.6rem 0;
+        margin: $spacing-sm 0;
+        line-height: 1.4;
       }
 
       .icons {
         display: flex;
         justify-content: center;
         gap: $spacing-sm;
-        margin-top: $spacing-xxs;
+        margin-top: $spacing-xs;
 
         a {
           color: $text-color;
@@ -77,6 +109,7 @@
         display: inline-block;
         margin-top: $spacing-sm;
         text-decoration: none;
+        width: auto;
 
         &:hover {
           background-color: rgba($primary-hover-color, 0.76);
@@ -89,40 +122,114 @@
 
   .about {
     flex: 2;
+    width: 100%;
     max-width: $container-lg;
     background-color: $background-light;
     border-radius: $border-radius-sm;
-    padding: $spacing-xs;
-    margin-top: $spacing-lg;
-    margin-left: auto;
-    margin-right: auto;
+    padding: $spacing-md;
+    box-sizing: border-box;
+    word-wrap: break-word;
 
     h2 {
-      font-size: $font-size-xl;
-      margin-bottom: $spacing-xxs;
-      color: $text-color;
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-sm;
+      color: $primary-color;
       text-shadow: $shadow-text;
     }
 
     p {
       font-size: $font-size-xs;
-      line-height: 1.8;
+      line-height: 1.6;
       color: $text-secondary;
       text-shadow: $shadow-text;
+      margin-bottom: 0;
     }
   }
 
-  @include respond-to(md) {
-    flex-direction: column;
-    align-items: center;
-    padding: $spacing-sm $spacing-xxs;
+  .experience-section,
+  .education-section {
+    flex: 1;
+    width: 100%;
+    background-color: $background-light;
+    border-radius: $border-radius-sm;
+    padding: $spacing-md;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    margin-top: 0;
 
-    .home-column,
-    .about {
-      width: 100%;
+    h2 {
+      font-size: $font-size-md;
+      margin-bottom: $spacing-md;
+      color: $primary-color;
+      text-shadow: $shadow-text;
+      padding-bottom: $spacing-xs;
+    }
+  }
+
+  .experience-list,
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  @include respond-to(md) {
+    padding: $spacing-md $spacing-sm;
+
+    .home-column {
       max-width: 100%;
-      margin-left: 0;
-      margin-right: 0;
+      
+      .image-wrapper {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .about,
+    .experience-section,
+    .education-section {
+      padding: $spacing-md;
+      
+      h2 {
+        font-size: $font-size-md;
+      }
+    }
+
+    .education-section {
+      margin-top: $spacing-md;
+    }
+  }
+
+  @include respond-to(sm) {
+    padding: $spacing-md $spacing-xs;
+
+    .home-column {
+      .content {
+        padding: $spacing-sm;
+        
+        h1 {
+          font-size: $font-size-sm;
+        }
+        
+        .subtitle {
+          font-size: $font-size-xxs;
+        }
+      }
+    }
+
+    .about,
+    .experience-section,
+    .education-section {
+      padding: $spacing-sm;
+      
+      h2 {
+        font-size: $font-size-sm;
+        margin-bottom: $spacing-sm;
+      }
+      
+      p {
+        font-size: $font-size-xxs;
+      }
     }
   }
 }

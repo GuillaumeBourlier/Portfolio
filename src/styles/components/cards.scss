@@ -1,0 +1,151 @@
+@use '../layout/variables' as *;
+@use '../layout/mixins' as *;
+
+.home-section {
+  .top-section {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    width: 100%;
+
+    @include respond-to(md) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .bottom-section {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    width: 100%;
+    margin-top: $spacing-lg;
+
+    @include respond-to(md) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .experience-section,
+  .education-section {
+    flex: 1;
+    background-color: $background-light;
+    border-radius: $border-radius-sm;
+    padding: $spacing-xs;
+    max-width: $container-md;
+
+    h2 {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-sm;
+      color: $primary-color;
+      text-shadow: $shadow-text;
+    }
+  }
+}
+
+.experience-section,
+.education-section {
+  flex: 2;
+  max-width: $container-lg;
+  background-color: $background-light;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs;
+  margin-top: $spacing-lg;
+  margin-left: auto;
+  margin-right: auto;
+
+  h2 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+    color: $primary-color;
+    text-shadow: $shadow-text;
+  }
+}
+
+.experience-list,
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+/* Styles communs aux cartes */
+.experience-card,
+.education-card {
+  background-color: rgba($background-tech, 0.6);
+  padding: $spacing-sm;
+  border-radius: $border-radius-sm;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-hover-card;
+  }
+
+  .card-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: $spacing-xxs;
+    margin-bottom: $spacing-xxs;
+
+    h3 {
+      font-size: $font-size-sm;
+      color: $text-color;
+      margin: 0;
+      flex: 1 1 100%;
+    }
+
+    .company,
+    .institution {
+      font-size: $font-size-xs;
+      color: $primary-color;
+    }
+
+    .period,
+    .year {
+      font-size: $font-size-xxs;
+      color: $text-secondary;
+      margin-left: auto;
+    }
+  }
+
+  .description {
+    font-size: $font-size-xxs;
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}
+
+/* Styles spécifiques aux cartes expérience */
+.experience-card .technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xxs;
+  margin-top: $spacing-xs;
+
+  .tech-tag {
+    background: rgba($primary-color, 0.2);
+    color: $text-color;
+    padding: 0.2rem $spacing-xxs;
+    border-radius: $border-radius-xs;
+    font-size: 0.7rem;
+  }
+}
+
+/* Responsive */
+@include respond-to(md) {
+  .experience-section,
+  .education-section {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .experience-card,
+  .education-card {
+    padding: $spacing-xxs;
+  }
+}

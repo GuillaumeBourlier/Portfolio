@@ -1,28 +1,32 @@
+@use '../layout/variables' as *;
+@use '../layout/mixins' as *;
+
 .footer {
-  background-color: #20232a;
-  color: white;
-  padding: 1rem;
+  background-color: $background-dark;
+  color: $text-color;
+  padding: 0.5rem 1rem;
   margin-top: auto;
 
   .footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
     text-align: center;
+    font-size: $font-size-xs;
   }
 
   .footer-logo {
-    width: 100px;
+    width: 60px;
     height: auto;
-    color: #61dafb;
+    color: $primary-color;
   }
 
   @media (max-width: 768px) {
     .footer-content {
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.25rem;
     }
 
     .footer-logo {
