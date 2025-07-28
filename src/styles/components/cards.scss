@@ -34,6 +34,7 @@
     border-radius: $border-radius-sm;
     padding: $spacing-xs;
     max-width: $container-md;
+    margin-bottom: auto;
 
     h2 {
       font-size: $font-size-lg;
@@ -70,7 +71,6 @@
   gap: $spacing-sm;
 }
 
-/* Styles communs aux cartes */
 .experience-card,
 .education-card {
   background-color: rgba($background-tech, 0.6);
@@ -118,7 +118,6 @@
   }
 }
 
-/* Styles spécifiques aux cartes expérience */
 .experience-card .technologies {
   display: flex;
   flex-wrap: wrap;
@@ -134,7 +133,6 @@
   }
 }
 
-/* Responsive */
 @include respond-to(md) {
   .experience-section,
   .education-section {

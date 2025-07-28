@@ -150,19 +150,36 @@
   .education-section {
     flex: 1;
     width: 100%;
-    background-color: $background-light;
-    border-radius: $border-radius-sm;
-    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    padding: $spacing-lg;
     box-sizing: border-box;
-    word-wrap: break-word;
     margin-top: 0;
+    box-shadow: $shadow-default;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: $primary-color;
+      border-radius: $border-radius-sm 0 0 $border-radius-sm;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-hover-card;
+    }
 
     h2 {
-      font-size: $font-size-md;
+      font-size: $font-size-lg;
       margin-bottom: $spacing-md;
       color: $primary-color;
       text-shadow: $shadow-text;
-      padding-bottom: $spacing-xs;
+      text-align: center;
     }
   }
 
@@ -171,6 +188,49 @@
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
+
+    .card {
+      background: rgba($background-tech, 0.6);
+      border-radius: $border-radius-sm;
+      padding: $spacing-md;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: $shadow-hover-card;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: $spacing-xs;
+
+        h3 {
+          font-size: $font-size-md;
+          color: $text-color;
+          margin: 0;
+        }
+
+        .period {
+          font-size: $font-size-xxs;
+          color: $text-secondary;
+        }
+      }
+
+      .subtitle {
+        font-size: $font-size-xs;
+        color: $primary-color;
+        margin-bottom: $spacing-xs;
+      }
+
+      .description {
+        font-size: $font-size-xxs;
+        color: $text-secondary;
+        line-height: 1.6;
+      }
+    }
   }
 
   @include respond-to(md) {
@@ -197,6 +257,23 @@
 
     .education-section {
       margin-top: $spacing-md;
+    }
+
+    .experience-section,
+    .education-section {
+      &::before {
+        display: none;
+      }
+    }
+
+    .experience-list,
+    .education-list {
+      gap: $spacing-sm;
+
+      .card {
+        padding: $spacing-sm;
+        border-radius: $border-radius-sm;
+      }
     }
   }
 

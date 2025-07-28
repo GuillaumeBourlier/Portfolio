@@ -14,7 +14,7 @@ const Home = () => {
       company: "Openclassrooms",
       period: "2025",
       description: "Développement d'interfaces utilisateur réactives et accessibles avec React. Collaboration avec les équipes back-end pour l'intégration d'APIs.",
-      technologies: ["React", "TypeScript", "Sass"]
+      technologies: ["HTML","CSS","React", "Javascripts", "API", "Github"]
     },
     {
       id: 2,
@@ -23,14 +23,21 @@ const Home = () => {
       period: "2019 - 2024",
       description: "Assurance qualité avec focus sur l'expérience utilisateur. Mise en place de procédures de contrôle et d'amélioration continue.",
       technologies: ["Qualité", "Process", "Optimisation"]
-    }
+    },
+    {
+      id: 3,
+      title: "Chef De Cuisine",
+      company: "Elior",
+      period: "2017 - 2019",
+      description: "Responsable de la production culinaire et du bon fonctionnement de la cuisine pour un établissement de 1200 couverts.",
+      technologies: ["Qualité Culinaire", "Process", "Management"]
+    },
   ];
 
-  // Données pour les diplômes
   const diplomes = [
     {
       id: 1,
-      title: "Développeur d'application - JavaScript React (Formation en cours)",
+      title: "Développeur d'application - React.JS (Formation en cours)",
       institution: "OpenClassrooms",
       year: "2025",
       description: "Formation intensive en développement front-end avec spécialisation React."
@@ -40,7 +47,15 @@ const Home = () => {
       id: 2,
       title: "BAC Profesionnel - Hôtellerie Restauration",
       institution: "Santos Dumont",
-      year: "2026",
+      year: "2006",
+      description: "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale."
+    },
+        {
+        
+      id: 3,
+      title: "Brevet d'Étude profesionnel - Hôtellerie Restauration",
+      institution: "Santos Dumont",
+      year: "2004",
       description: "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale."
     }
   ];
@@ -48,7 +63,6 @@ const Home = () => {
   return (
     <main>
       <section className="home-section">
-        {/* Première ligne : Photo + À propos */}
         <div className="top-section">
           <div className="home-column">
             <div className="image-wrapper">
@@ -100,7 +114,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Deuxième ligne : Expérience + Diplômes */}
         <div className="bottom-section">
           <div className="experience-section">
             <h2>Expérience Professionnelle</h2>

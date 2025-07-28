@@ -39,7 +39,7 @@
   .tech-list {
     display: flex;
     justify-content: center;
-    gap: $spacing-sm;
+    gap: $spacing-md;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
@@ -54,15 +54,16 @@
       color: $text-color;
       padding: $spacing-xs;
       min-width: 120px;
+      border-radius: $border-radius-md;
 
       &:hover {
-        transform: translateY(-3px);
+        transform: translateY(1.05px);
         box-shadow: $shadow-hover-tech;
       }
 
       span {
         margin-top: $spacing-xxs;
-        font-size: $font-size-xxs;
+        font-size: $font-size-xs;
       }
 
       svg,
@@ -130,7 +131,8 @@
   }
 
   @include respond-to(md) {
-    padding: $spacing-md $spacing-xxs;
+    padding: $spacing-md $spacing-xs;
+    text-align: center;
     background-attachment: scroll;
 
     h2 {
@@ -138,14 +140,15 @@
     }
 
     .competencies-intro {
-      padding: $spacing-xxs;
-      font-size: $font-size-xxs;
-      margin-bottom: $spacing-md;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-xs;
     }
 
     .tech-list {
-      gap: 1.2rem;
       margin-bottom: $spacing-md;
+          gap: $spacing-sm;
+    flex-direction: column; 
+ 
 
       .tech-item {
         padding: $spacing-xxs;
@@ -160,8 +163,21 @@
       }
     }
 
-    .coming-soon {
-      padding: $spacing-xxs $spacing-xs;
-    }
+.coming-soon {
+  background: rgba($background-coming-soon, 0.8);
+  padding: $spacing-sm;
+  border-radius: $border-radius-md;
+  margin-top: $spacing-lg;
+
+  h3 {
+    font-size: $font-size-md;
+    color: $primary-color;
+  }
+
+  ul {
+    font-size: $font-size-xxs;
+    line-height: 1.4;
   }
 }
+    }
+  }
