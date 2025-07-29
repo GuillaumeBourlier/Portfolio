@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/Portfolio/',
   css: {
     preprocessorOptions: {
       scss: {
@@ -11,12 +12,12 @@ export default defineConfig({
           @use "src/styles/layout/variables" as *;
           @use "src/styles/layout/mixins" as *;
         `,
-      }
-    }
+      },
+    },
   },
   resolve: {
     alias: {
-      '@': '/src'
-    }
-  }
+      '@': '/src',
+    },
+  },
 })
