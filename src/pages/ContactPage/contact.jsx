@@ -1,35 +1,13 @@
-import React, { useState } from "react";
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Modal from "../../components/Form/Modal";
 
 const Contact = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [state, handleSubmit] = useForm("mnnzvyek");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-
-    try {
-      const response = await fetch(e.target.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        setShowModal(true);
-        e.target.reset(); 
-        setTimeout(() => setShowModal(false), 3000);
-      } else {
-        alert("Une erreur s'est produite, veuillez réessayer.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Une erreur s'est produite, veuillez réessayer.");
-    }
-  };
+  if (state.succeeded) {
+    return <Modal message="Votre message a bien été envoyé !" onClose={() => {}} />;
+  }
 
   return (
     <section id="contact" className="contact-section">
@@ -46,29 +24,57 @@ const Contact = () => {
             votre équipe ou à vos initiatives.
           </p>
         </div>
-        <form
-          className="contact-form"
-          onSubmit={handleSubmit}
-          action="https://formspree.io/f/mnnzvyek"
-          method="POST"
-        >
-          <input type="text" name="name" placeholder="Votre nom" required />
-          <input type="email" name="email" placeholder="Votre email" required />
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <label htmlFor="name">
+            Votre nom
+          </label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Votre nom"
+            required
+          />
+          <ValidationError
+            prefix="Name"
+            field="name"
+            errors={state.errors}
+          />
+          <label htmlFor="email">
+            Votre email
+          </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Votre email"
+            required
+          />
+          <ValidationError
+            prefix="Email"
+            field="email"
+            errors={state.errors}
+          />
+          <label htmlFor="message">
+            Votre message
+          </label>
           <textarea
+            id="message"
             name="message"
             rows="5"
             placeholder="Votre message"
             required
-          ></textarea>
-          <button type="submit">Envoyer</button>
+          />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+          <button type="submit" disabled={state.submitting}>
+            Envoyer
+          </button>
         </form>
       </div>
-      {showModal && (
-        <Modal
-          message="Votre message a bien été envoyé !"
-          onClose={() => setShowModal(false)}
-        />
-      )}
     </section>
   );
 };
