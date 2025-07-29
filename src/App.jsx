@@ -1,5 +1,5 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/HomePage/home";
@@ -10,32 +10,33 @@ import Projects from "./pages/ProjectsPage/projects";
 import Loader from "./components/Loader/Loader";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    if (!window.location.hash) {
-      window.location.hash = "#/"
-    }
-  }, [])
+  const handleLoaderFinish = () => {
+    setIsLoading(false);
+  };
 
  return (
-    <Router>
+    <>
       {isLoading ? (
-        <Loader onFinish={() => setIsLoading(false)} />
+        <Loader onFinish={handleLoaderFinish} />
       ) : (
-        <div className="app">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/competencies" element={<Competencies />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<ErrorPage />} />
-      </Routes>
-          <Footer />
-        </div>
+        <Router basename="/Portfolio">
+          <div className="app">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/competencies" element={<Competencies />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
       )}
-    </Router>
-  )
+    </>
+  );
 }
+
 export default App;

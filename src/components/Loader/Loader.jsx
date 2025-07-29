@@ -7,12 +7,7 @@ const Loader = ({ onFinish }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeOut(true);
-      setTimeout(() => {
-        onFinish();
-        if (!window.location.hash) {
-          window.location.hash = "#/";
-        }
-      }, 800);
+      setTimeout(onFinish, 800);
     }, 2500);
 
     return () => clearTimeout(timer);
