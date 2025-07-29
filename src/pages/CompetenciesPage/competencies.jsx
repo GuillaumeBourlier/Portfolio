@@ -26,7 +26,6 @@ const Competencies = () => {
         Voici un aperçu des technologies que j’utilise dans mes projets :
       </p>
 
-      {/* Liste des technologies */}
       <ul className="tech-list">
         {techs.map((tech) => (
           <li key={tech.label} className="tech-item" aria-label={tech.label}>
@@ -50,10 +49,9 @@ const Competencies = () => {
         ))}
       </ul>
 
-      {/* Technologies à venir */}
       <div className="coming-soon">
         <h3>À venir</h3>
-        <p>Je vais prochainement apprendre ces nouvelles technologies :</p>
+        <p>Je vais prochainement apprendre cette nouvelle technologie :</p>
         <ul>
           {upcomingSkills.map((skill) => (
             <li key={skill}>{skill}</li>

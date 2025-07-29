@@ -103,12 +103,11 @@ const Home = () => {
                 className="cv-button"
                 aria-label="Télécharger mon CV au format PDF"
               >
-                Télécharger mon CV (PDF)
+                Télécharger mon CV
               </a>
             </div>
           </div>
 
-          {/* À propos */}
           <div className="about">
             <h2>À propos de moi</h2>
             <p>
@@ -121,14 +120,14 @@ const Home = () => {
               complexes en applications fluides et engageantes.
             </p>
 
-            {/* Flèche animée */}
+
             <div className="scroll-indicator" onClick={scrollToExperience}>
-              ⬇ En savoir +
+              ⬇ En savoir + ⬇
             </div>
           </div>
-        </div> {/* ✅ fermeture correcte de .top-section */}
+        </div> 
 
-        {/* Expériences et Diplômes */}
+  
         <div className="bottom-section">
           <div className="experience-section">
             <h2>Expérience Professionnelle</h2>

@@ -121,30 +121,53 @@
   }
 
   .about {
-    flex: 2;
-    width: 100%;
-    max-width: $container-lg;
-    background-color: $background-light;
-    border-radius: $border-radius-sm;
-    padding: $spacing-md;
-    box-sizing: border-box;
-    word-wrap: break-word;
+  flex: 2;
+  width: 100%;
+  max-width: $container-lg;
+  background-color: $background-light;
+  border-radius: $border-radius-sm;
+  padding: $spacing-md;
+  padding-top: $spacing-lg;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  position: relative;
 
-    h2 {
-      font-size: $font-size-lg;
-      margin-bottom: $spacing-sm;
-      color: $primary-color;
-      text-shadow: $shadow-text;
-    }
-
-    p {
-      font-size: $font-size-xs;
-      line-height: 1.6;
-      color: $text-secondary;
-      text-shadow: $shadow-text;
-      margin-bottom: 0;
-    }
+  h2 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+    color: $primary-color;
+    text-shadow: $shadow-text;
+    margin-top: 0px; 
   }
+
+  p {
+    font-size: $font-size-xs;
+    line-height: 1.6;
+    color: $text-secondary;
+    text-shadow: $shadow-text;
+    margin-bottom: $spacing-md; 
+  }
+
+  .scroll-indicator {
+  text-align: center;         
+  color: $primary-color;
+  font-size: $font-size-md;          
+  margin-top: 60px;           
+  cursor: pointer;            
+  animation: bounce 1.5s infinite; 
+}
+  }
+@keyframes bounce {
+  0%, 25%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
 
   .experience-section,
   .education-section {
@@ -232,30 +255,6 @@
       }
     }
   }
-
-
-.scroll-indicator {
-  text-align: center;         
-  color: $primary-color;
-  font-size: 1.5rem;          
-  margin-top: 60px;           
-  cursor: pointer;            
-  animation: bounce 1.5s infinite; 
-}
-
-
-@keyframes bounce {
-  0%, 25%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-8px);
-  }
-  60% {
-    transform: translateY(-4px);
-  }
-}
-
 
 
   @include respond-to(md) {

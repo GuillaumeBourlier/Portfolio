@@ -17,7 +17,7 @@ const Loader = ({ onFinish }) => {
     <div className={`loader-container ${fadeOut ? "fade-out" : ""}`}>
       <div className="loader-logo">
         <img src={loaderImage} alt="Loader" loading="eager" />
-        <div className="portfolio-text">portfolio</div>
+        <div className="portfolio-text">Portfolio</div>
       </div>
     </div>
   );
