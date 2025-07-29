@@ -123,7 +123,7 @@ const Home = () => {
 
             {/* Flèche animée */}
             <div className="scroll-indicator" onClick={scrollToExperience}>
-              ⬇ Scroll pour voir plus
+              ⬇ En savoir +
             </div>
           </div>
         </div> {/* ✅ fermeture correcte de .top-section */}
