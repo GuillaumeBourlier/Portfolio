@@ -1,3 +1,6 @@
+@use "~styles/layout/variables" as *;
+@use "~styles/layout/mixins" as *;
+
 @use "./components/navbar";
 @use "./components/footer";
 @use "./pages/home";

@@ -1,8 +1,8 @@
 import ProjectCard from "../../components/Projects/ProjectCard";
-import kasaImage from "../../assets/kasa.webp";
-import ohmyfoodImage from "../../assets/ohmyfood.webp";
-import ninaCarducciImage from "../../assets/nina.webp";
-import argentbankImage from "../../assets/argentbank.webp";
+import kasaImage from "@/assets/kasa.webp";
+import ohmyfoodImage from "@/assets/ohmyfood.webp";
+import ninaCarducciImage from "@/assets/nina.webp";
+import argentbankImage from "@/assets/argentbank.webp";
 
 const projects = [
   {

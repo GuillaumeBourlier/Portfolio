@@ -1,8 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import profile from "../../assets/photo.webp";
-import cv from "../../assets/CV-Guillaume-Bourlier.pdf";
+import profile from "@/assets/photo.webp";
+import cv from "@/assets/CV-Guillaume-Bourlier.pdf";
 import ExperienceCard from "../../components/cards/ExperienceCard";
 import EducationCard from "../../components/cards/EducationCard";
 

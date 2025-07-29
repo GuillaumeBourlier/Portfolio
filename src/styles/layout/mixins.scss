@@ -1,4 +1,4 @@
-@use './variables' as *;
+@use "~styles/layout/variables" as *;
 
 @mixin background-overlay($blur: false) {
   background-image: url("@/assets/img_background.webp");

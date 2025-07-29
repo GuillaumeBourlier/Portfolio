@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import loaderImage from "../../assets/logo.webp";
+import loaderImage from "@/assets/logo.webp";
 
 const Loader = ({ onFinish }) => {
   const [fadeOut, setFadeOut] = useState(false);

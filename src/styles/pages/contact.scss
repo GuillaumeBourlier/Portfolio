@@ -1,5 +1,5 @@
-@use "../layout/variables" as *;
-@use "../layout/mixins" as *;
+@use "~styles/layout/variables" as *;
+@use "~styles/layout/mixins" as *;
 
 .contact-section {
   @include background-overlay(true);
