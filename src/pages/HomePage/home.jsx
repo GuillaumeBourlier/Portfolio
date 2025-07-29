@@ -13,24 +13,27 @@ const Home = () => {
       title: "Formation Développeur Front-End",
       company: "Openclassrooms",
       period: "2025",
-      description: "Développement d'interfaces utilisateur réactives et accessibles avec React. Collaboration avec les équipes back-end pour l'intégration d'APIs.",
-      technologies: ["HTML","CSS","React", "Javascripts", "API", "Github"]
+      description:
+        "Développement d'interfaces utilisateur réactives et accessibles avec React. Collaboration avec les équipes back-end pour l'intégration d'APIs.",
+      technologies: ["HTML", "CSS", "React", "Javascripts", "API", "Github"],
     },
     {
       id: 2,
       title: "Auditeur Qualité Hygiène et Environnemental",
       company: "Convergence",
       period: "2019 - 2024",
-      description: "Assurance qualité avec focus sur l'expérience utilisateur. Mise en place de procédures de contrôle et d'amélioration continue.",
-      technologies: ["Qualité", "Process", "Optimisation"]
+      description:
+        "Assurance qualité avec focus sur l'expérience utilisateur. Mise en place de procédures de contrôle et d'amélioration continue.",
+      technologies: ["Qualité", "Process", "Optimisation"],
     },
     {
       id: 3,
       title: "Chef De Cuisine",
       company: "Elior",
       period: "2017 - 2019",
-      description: "Responsable de la production culinaire et du bon fonctionnement de la cuisine pour un établissement de 1200 couverts.",
-      technologies: ["Qualité Culinaire", "Process", "Management"]
+      description:
+        "Responsable de la production culinaire et du bon fonctionnement de la cuisine pour un établissement de 1200 couverts.",
+      technologies: ["Qualité Culinaire", "Process", "Management"],
     },
   ];
 
@@ -40,25 +43,30 @@ const Home = () => {
       title: "Développeur d'application - React.JS (Formation en cours)",
       institution: "OpenClassrooms",
       year: "2025",
-      description: "Formation intensive en développement front-end avec spécialisation React."
+      description:
+        "Formation intensive en développement front-end avec spécialisation React.",
     },
     {
-        
       id: 2,
-      title: "BAC Profesionnel - Hôtellerie Restauration",
+      title: "BAC Professionnel - Hôtellerie Restauration",
       institution: "Santos Dumont",
       year: "2006",
-      description: "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale."
+      description:
+        "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale.",
     },
-        {
-        
+    {
       id: 3,
-      title: "Brevet d'Étude profesionnel - Hôtellerie Restauration",
+      title: "Brevet d'Étude Profesionnel - Hôtellerie Restauration",
       institution: "Santos Dumont",
       year: "2004",
-      description: "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale."
-    }
+      description:
+        "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale.",
+    },
   ];
+
+  const scrollToExperience = () => {
+    document.querySelector(".bottom-section").scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main>
@@ -100,6 +108,7 @@ const Home = () => {
             </div>
           </div>
 
+          {/* À propos */}
           <div className="about">
             <h2>À propos de moi</h2>
             <p>
@@ -111,9 +120,15 @@ const Home = () => {
               approche orientée solution me permettent de transformer des idées
               complexes en applications fluides et engageantes.
             </p>
-          </div>
-        </div>
 
+            {/* Flèche animée */}
+            <div className="scroll-indicator" onClick={scrollToExperience}>
+              ⬇ Scroll pour voir plus
+            </div>
+          </div>
+        </div> {/* ✅ fermeture correcte de .top-section */}
+
+        {/* Expériences et Diplômes */}
         <div className="bottom-section">
           <div className="experience-section">
             <h2>Expérience Professionnelle</h2>

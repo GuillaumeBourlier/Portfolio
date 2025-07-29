@@ -1,0 +1,113 @@
+@use "../layout/variables" as *;
+@use "../layout/mixins" as *;
+
+.projects-container {
+  @include background-overlay(true);
+  padding: $spacing-lg $spacing-sm;
+  text-align: center;
+  min-height: 92vh;
+  position: relative;
+  z-index: 0;
+
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-xl;
+    color: $primary-color;
+    text-shadow: $shadow-text;
+    background-color: $background-light;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-sm;
+    padding: 0;
+
+    &:hover > .project-card:not(:hover) {
+      opacity: 0.3;
+    }
+  }
+
+  .project-card {
+    @include card-style($background-tech);
+    padding: $spacing-xs;
+    border-radius: $border-radius-md;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: $shadow-hover-card;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: $border-radius-xs;
+      margin-bottom: $spacing-xxs;
+    }
+
+    h3 {
+      font-size: $font-size-sm;
+      margin-bottom: $spacing-xxs;
+      text-align: center;
+      color: $text-color;
+    }
+
+    p {
+      font-size: $font-size-xxs;
+      color: $text-color;
+      margin-bottom: $spacing-xxs;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-links {
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+
+      a {
+        @include button-style;
+        padding: $spacing-xxs $spacing-xs;
+        border-radius: $border-radius-xs;
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+
+        svg {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    h2 {
+      font-size: $font-size-lg;
+    }
+  }
+
+  @include respond-to(md) {
+    padding: $spacing-md $spacing-xxs;
+
+    h2 {
+      font-size: $font-size-md;
+      margin-bottom: $spacing-lg;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

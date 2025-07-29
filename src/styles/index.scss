@@ -6,6 +6,8 @@
 @use "./pages/contact";
 @use "./components/modal";
 @use "./components/cards";
+@use "./pages/projects.scss";
+@use "./components/loader.scss";
 
 * {
   margin: 0;

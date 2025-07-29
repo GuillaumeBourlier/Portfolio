@@ -16,19 +16,20 @@ const techs = [
   { label: "Redux", icon: reduxLogo, type: "webp" },
 ];
 
-const upcomingSkills = ["Next.js",];
+const upcomingSkills = ["Next.js"];
 
 const Competencies = () => {
   return (
     <section id="competencies" className="competencies">
       <h2>Mes Compétences</h2>
       <p className="competencies-intro">
-        Voici un aperçu des technologies que j’utilise dans mes projets
+        Voici un aperçu des technologies que j’utilise dans mes projets :
       </p>
 
+      {/* Liste des technologies */}
       <ul className="tech-list">
         {techs.map((tech) => (
-          <li key={tech.label} className="tech-item">
+          <li key={tech.label} className="tech-item" aria-label={tech.label}>
             {tech.type === "fontawesome" ? (
               <FontAwesomeIcon
                 icon={tech.icon}
@@ -37,13 +38,19 @@ const Competencies = () => {
                 aria-hidden="true"
               />
             ) : (
-              <img src={tech.icon} alt="" className="svg-icon" />
+              <img
+                src={tech.icon}
+                alt={tech.label}
+                className="svg-icon"
+                loading="lazy"
+              />
             )}
             <span>{tech.label}</span>
           </li>
         ))}
       </ul>
 
+      {/* Technologies à venir */}
       <div className="coming-soon">
         <h3>À venir</h3>
         <p>Je vais prochainement apprendre ces nouvelles technologies :</p>
