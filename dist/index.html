@@ -10,22 +10,22 @@
     content="Découvrez mon portfolio, mes projets en React et mes compétences en développement web.">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" type="image/webp" href="./assets/logo-CEWD99m5-CEWD99m5-CEWD99m5-CEWD99m5.webp" />
+  <link rel="icon" type="image/webp" href="/Portfolio/assets/logo-CEWD99m5-CEWD99m5-CEWD99m5-CEWD99m5-CEWD99m5.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <title>Guillaume Bourlier - Portfolio Développeur Front-End</title>
 
-  <script>
-    const pathSegments = window.location.pathname.split('/');
-    if (pathSegments[1] === 'Portfolio' && pathSegments.length > 2) {
-      window.location.href = '/Portfolio/#' + pathSegments.slice(2).join('/');
-    }
-  </script>
+<script>
+  if (!window.location.hash) {
+    window.location.replace(window.location + '#/');
+  }
+</script>
 
-  <script type="module" crossorigin src="./assets/index-BToYsVOV.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CJP0CXgh.css">
+
+  <script type="module" crossorigin src="/Portfolio/assets/index-4Bvo9M0c.js"></script>
+  <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-CA5VOHnp.css">
 </head>
 
 <body>
