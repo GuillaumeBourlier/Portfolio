@@ -20,7 +20,7 @@ const Contact = () => {
 
       if (response.ok) {
         setShowModal(true);
-        e.target.reset(); // Réinitialise le formulaire
+        e.target.reset(); 
         setTimeout(() => setShowModal(false), 3000);
       } else {
         alert("Une erreur s'est produite, veuillez réessayer.");
