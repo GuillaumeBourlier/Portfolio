@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Guillaume Bourlier - Portfolio Développeur Front-End</title>
+    <script>
+    if (!window.location.hash && !window.location.pathname.includes('/Portfolio')) {
+      window.location.replace('/Portfolio/#' + (window.location.pathname.split('/Portfolio/')[1] || ''));
+    }
+  </script>
 </head>
 <body>
   <div id="root"></div>

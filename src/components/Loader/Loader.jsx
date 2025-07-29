@@ -7,7 +7,12 @@ const Loader = ({ onFinish }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeOut(true);
-      setTimeout(() => onFinish(), 800);
+      setTimeout(() => {
+        onFinish();
+        if (!window.location.hash) {
+          window.location.hash = "#/";
+        }
+      }, 800);
     }, 2500);
 
     return () => clearTimeout(timer);
@@ -16,7 +21,7 @@ const Loader = ({ onFinish }) => {
   return (
     <div className={`loader-container ${fadeOut ? "fade-out" : ""}`}>
       <div className="loader-logo">
-        <img src={loaderImage} alt="Loader" />
+        <img src={loaderImage} alt="Loader" loading="eager" />
         <div className="portfolio-text">portfolio</div>
       </div>
     </div>

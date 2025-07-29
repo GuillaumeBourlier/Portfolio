@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Redirection</title>
   <script>
-    const segment = window.location.pathname.split('/');
-    const redirectPath = segment.slice(2).join('/');
-    
-    if (redirectPath) {
-      window.location.href = '/Portfolio/#' + redirectPath;
-    } else {
-      window.location.href = '/Portfolio/#/';
-    }
+    const path = window.location.pathname.split('/Portfolio/')[1] || '';
+    window.location.href = '/Portfolio/#' + (path ? path : '');
   </script>
 </head>
 <body>

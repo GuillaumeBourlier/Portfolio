@@ -1,11 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path"; // Ajout important
+import path from "path";
 
-// https://vite.dev/config/
 export default defineConfig({
   base: '/Portfolio/',
   plugins: [react()],
+  server: {
+    port: 5173,
+    strictPort: true,
+    host: true,
+    open: '/Portfolio/'
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -19,7 +24,13 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        404: path.resolve(__dirname, '404.html')
+      }
+    }
   },
   resolve: {
     alias: {

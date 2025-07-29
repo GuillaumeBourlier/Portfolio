@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
+import { useState, useEffect } from "react"
 import Navbar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/HomePage/home";
@@ -10,37 +10,32 @@ import Projects from "./pages/ProjectsPage/projects";
 import Loader from "./components/Loader/Loader";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
 
-  const handleLoaderFinish = () => {
-    setIsLoading(false);
-    // Assure que la route est correcte après le chargement
-    if (window.location.pathname !== '/Portfolio/' && !window.location.hash) {
-      window.history.replaceState(null, '', '/Portfolio/');
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.location.hash = "#/"
     }
-  };
+  }, [])
 
-  return (
-    <>
+ return (
+    <Router>
       {isLoading ? (
-        <Loader onFinish={handleLoaderFinish} />
+        <Loader onFinish={() => setIsLoading(false)} />
       ) : (
-        <Router basename="/Portfolio">
-          <div className="app">
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/competencies" element={<Competencies />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<ErrorPage />} />
-            </Routes>
-            <Footer />
-          </div>
-        </Router>
+        <div className="app">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/competencies" element={<Competencies />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<ErrorPage />} />
+      </Routes>
+          <Footer />
+        </div>
       )}
-    </>
-  );
+    </Router>
+  )
 }
-
 export default App;
