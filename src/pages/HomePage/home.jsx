@@ -14,7 +14,7 @@ const Home = () => {
       company: "Openclassrooms",
       period: "2025",
       description:
-        "Développement d'interfaces utilisateur réactives et accessibles avec React. Collaboration avec les équipes back-end pour l'intégration d'APIs.",
+        "Création d’une application de location immobilière avec React.js & ReactRouter : gestion des états, formulaires interactifs, navigation dynamique. Intégration front-end d’une application bancaire React : composantsréutilisables, interface sécurisée et responsive.Optimisation SEO et accessibilité d’un site de photographe (améliorationde la performance Lighthouse).Débogage et amélioration UX d’un site événementiel (résolution de bugscritiques, refonte de l’expérience utilisateur).",
       technologies: ["HTML", "CSS", "React", "Javascripts", "API", "Github"],
     },
     {
@@ -23,7 +23,7 @@ const Home = () => {
       company: "Convergence",
       period: "2019 - 2024",
       description:
-        "Assurance qualité avec focus sur l'expérience utilisateur. Mise en place de procédures de contrôle et d'amélioration continue.",
+        "Réalisation d’audits hygiène, sécurité et conformité réglementaire pourdes établissements de restauration. Rédaction de rapports détaillés et présentation des résultats encommissions clients. Mise en place et suivi des actions correctives (planification, reporting). Développement de compétences transposables en gestion de projet,rigueur et communication professionnelle.",
       technologies: ["Qualité", "Process", "Optimisation"],
     },
     {
@@ -65,7 +65,9 @@ const Home = () => {
   ];
 
   const scrollToExperience = () => {
-    document.querySelector(".bottom-section").scrollIntoView({ behavior: "smooth" });
+    document
+      .querySelector(".bottom-section")
+      .scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -111,23 +113,22 @@ const Home = () => {
           <div className="about">
             <h2>À propos de moi</h2>
             <p>
-              Avec plus de 15 ans d'expérience dans le domaine de la restauration
-              et dans le contrôle qualité où l'excellence de l'expérience
-              utilisateur était ma priorité, j'ai transposé cette passion dans le
-              monde du développement web. Aujourd'hui, je conçois des interfaces
-              intuitives et performantes. Ma rigueur, ma créativité et mon
-              approche orientée solution me permettent de transformer des idées
-              complexes en applications fluides et engageantes.
+              Avec plus de 15 ans d'expérience dans le domaine de la
+              restauration et dans le contrôle qualité où l'excellence de
+              l'expérience utilisateur était ma priorité, j'ai transposé cette
+              passion dans le monde du développement web. Aujourd'hui, je
+              conçois des interfaces intuitives et performantes. Ma rigueur, ma
+              créativité et mon approche orientée solution me permettent de
+              transformer des idées complexes en applications fluides et
+              engageantes.
             </p>
-
 
             <div className="scroll-indicator" onClick={scrollToExperience}>
               ⬇ En savoir + ⬇
             </div>
           </div>
-        </div> 
+        </div>
 
-  
         <div className="bottom-section">
           <div className="experience-section">
             <h2>Expérience Professionnelle</h2>
