@@ -14,7 +14,7 @@ const Home = () => {
       company: "Openclassrooms",
       period: "2025",
       description:
-        "Création d’une application de location immobilière avec React.js & ReactRouter : gestion des états, formulaires interactifs, navigation dynamique. Intégration front-end d’une application bancaire React : composantsréutilisables, interface sécurisée et responsive.Optimisation SEO et accessibilité d’un site de photographe (améliorationde la performance Lighthouse).Débogage et amélioration UX d’un site événementiel (résolution de bugscritiques, refonte de l’expérience utilisateur).",
+        "Création d’une application de location immobilière avec React.js & ReactRouter : gestion des états, formulaires interactifs, navigation dynamique. Intégration front-end d’une application bancaire React : composants réutilisables, interface sécurisée et responsive.Optimisation SEO et accessibilité d’un site de photographe (amélioration de la performance Lighthouse).Débogage et amélioration UX d’un site événementiel (résolution de bugscritiques, refonte de l’expérience utilisateur).",
       technologies: ["HTML", "CSS", "React", "Javascripts", "API", "Github"],
     },
     {
@@ -23,8 +23,8 @@ const Home = () => {
       company: "Convergence",
       period: "2019 - 2024",
       description:
-        "Réalisation d’audits hygiène, sécurité et conformité réglementaire pourdes établissements de restauration. Rédaction de rapports détaillés et présentation des résultats encommissions clients. Mise en place et suivi des actions correctives (planification, reporting). Développement de compétences transposables en gestion de projet,rigueur et communication professionnelle.",
-      technologies: ["Qualité", "Process", "Optimisation"],
+        "Réalisation d’audits hygiène, sécurité et conformité réglementaire pour des établissements de restauration. Rédaction de rapports détaillés et présentation des résultats en commissions clients. Mise en place et suivi des actions correctives (planification, reporting). Développement de compétences transposables en gestion de projet, rigueur et communication professionnelle.",
+      technologies: ["Qualité", "Process", "Sécurité", "Rédaction", "Reporting"],
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Home = () => {
       period: "2017 - 2019",
       description:
         "Responsable de la production culinaire et du bon fonctionnement de la cuisine pour un établissement de 1200 couverts.",
-      technologies: ["Qualité Culinaire", "Process", "Management"],
+      technologies: ["Qualité", "Process", "Gestion de stocks", "Management"],
     },
   ];
 
