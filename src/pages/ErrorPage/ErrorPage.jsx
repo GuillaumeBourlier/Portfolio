@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ErrorPage() {
   return (
     <main className="error-page">
@@ -5,7 +7,7 @@ export default function ErrorPage() {
       <h2 className="error-page__message">
         La page que vous recherchez est introuvable ou a été déplacée
       </h2>
-      <a href="/" className="error-page__link">Retourner à l'accueil</a>
+      <Link to="/" className="error-page__link">Retourner à l'accueil</Link>
     </main>
   );
 }

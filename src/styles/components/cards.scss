@@ -75,12 +75,6 @@
   background-color: rgba($background-tech, 0.6);
   padding: $spacing-sm;
   border-radius: $border-radius-sm;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: $shadow-hover-card;
-  }
 
   .card-header {
     display: flex;

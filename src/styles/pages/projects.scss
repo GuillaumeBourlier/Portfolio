@@ -39,9 +39,11 @@
     flex-direction: column;
     cursor: pointer;
 
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: $shadow-hover-card;
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-hover-card;
+      }
     }
 
     .project-image {

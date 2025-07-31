@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -9,6 +9,7 @@ import ExperienceCard from "../../components/cards/ExperienceCard";
 import EducationCard from "../../components/cards/EducationCard";
 
 const Home = () => {
+  const bottomSectionRef = useRef(null);
   const experiences = [
     {
       id: 1,
@@ -39,8 +40,15 @@ const Home = () => {
       title: "Chef de cuisine & Management en restauration",
       company: "Elior / Sodexo / Accord / Les Galopins",
       period: "2004 - 2019",
-      description: "Durant plus de 10 ans, j'ai évolué de Cuisinier à Chef Gérant, gérant des productions pour des sites allant jusqu'à 4000 couverts. J'ai piloté l'élaboration des menus, la gestion des stocks, l'encadrement d'équipes et le respect des normes qualité (HACCP, INCO), développant ainsi mon leadership, ma rigueur organisationnelle et ma capacité à résoudre des problèmes complexes sous pression.",
-      technologies: ["Gestion de production", "Organisation", "Normes qualité", "Planification", "Management"],
+      description:
+        "Durant plus de 10 ans, j'ai évolué de Cuisinier à Chef Gérant, gérant des productions pour des sites allant jusqu'à 4000 couverts. J'ai piloté l'élaboration des menus, la gestion des stocks, l'encadrement d'équipes et le respect des normes qualité (HACCP, INCO), développant ainsi mon leadership, ma rigueur organisationnelle et ma capacité à résoudre des problèmes complexes sous pression.",
+      technologies: [
+        "Gestion de production",
+        "Organisation",
+        "Normes qualité",
+        "Planification",
+        "Management",
+      ],
     },
   ];
 
@@ -50,14 +58,16 @@ const Home = () => {
       title: "Développeur d'application - React.JS (Formation en cours)",
       institution: "OpenClassrooms",
       year: "2025",
-      description: "Parcours diplômant axé sur la maîtrise de l'écosystème React pour la construction d'applications web modernes. Le programme couvre la création de composants réutilisables, la gestion d'état avec Redux, l'interaction avec des API, ainsi que l'optimisation des performances (SEO, accessibilité) et le débogage d'applications complexes.",
+      description:
+        "Parcours diplômant axé sur la maîtrise de l'écosystème React pour la construction d'applications web modernes. Le programme couvre la création de composants réutilisables, la gestion d'état avec Redux, l'interaction avec des API, ainsi que l'optimisation des performances (SEO, accessibilité) et le débogage d'applications complexes.",
     },
     {
       id: 2,
       title: "Brevet d'étude profesionnel - Hôtellerie Restauration",
       institution: "Santos Dumont",
       year: "2004",
-      description: "Initiation aux techniques culinaires de base, aux procédures d'hygiène et à l'organisation du travail en cuisine. Première approche de la gestion des matières premières et du service en restauration.",
+      description:
+        "Initiation aux techniques culinaires de base, aux procédures d'hygiène et à l'organisation du travail en cuisine. Première approche de la gestion des matières premières et du service en restauration.",
     },
   ];
 
@@ -71,9 +81,7 @@ const Home = () => {
   ];
 
   const scrollToExperience = () => {
-    document
-      .querySelector(".bottom-section")
-      .scrollIntoView({ behavior: "smooth" });
+    bottomSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -119,14 +127,15 @@ const Home = () => {
           <div className="about">
             <h2>À propos de moi</h2>
             <p>
-              Avec plus de 15 ans d'expérience dans le domaine de la
-              restauration et 5 ans dans le contrôle qualité où l'excellence de
-              l'expérience utilisateur était ma priorité, j'ai transposé cette
-              passion dans le monde du développement web. Aujourd'hui, je
-              conçois des interfaces intuitives et performantes. Ma rigueur, ma
-              créativité et mon approche orientée solution me permettent de
-              transformer des idées complexes en applications fluides et
-              engageantes.
+             De l’art culinaire à l’art du pixel-perfect  ! Après plus de 15
+              ans à faire vivre des expériences mémorables dans la restauration,
+              puis 5 ans à chasser le moindre détail en contrôle qualité, j’ai
+              naturellement trouvé ma voie dans le développement web, là où
+              l’expérience utilisateur est reine. Aujourd’hui, je conçois des
+              interfaces web qui allient fluidité, esthétique et performance.
+              Rigoureux, créatif et résolument orienté solution, je transforme
+              les idées (même les plus floues) en applications claires,
+              efficaces et engageantes.
             </p>
 
             <div className="soft-skills">
@@ -141,11 +150,19 @@ const Home = () => {
             </div>
 
             <div className="action-buttons-container">
-              <button className="scroll-button" onClick={scrollToExperience} aria-label="Découvrir mon parcours">
+              <button
+                className="scroll-button"
+                onClick={scrollToExperience}
+                aria-label="Découvrir mon parcours"
+              >
                 Découvrir mon parcours
                 <FontAwesomeIcon icon={faChevronDown} />
               </button>
-              <Link to="/projects" className="scroll-button" aria-label="Découvrir mes projets">
+              <Link
+                to="/projects"
+                className="scroll-button"
+                aria-label="Découvrir mes projets"
+              >
                 Découvrir mes projets
                 <FontAwesomeIcon icon={faChevronUp} />
               </Link>
@@ -153,7 +170,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bottom-section">
+        <div className="bottom-section" ref={bottomSectionRef}>
           <div className="experience-section">
             <h2>Expériences professionnelles</h2>
             <div className="experience-list">

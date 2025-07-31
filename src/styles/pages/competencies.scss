@@ -53,10 +53,13 @@
       @include card-style($background-tech);
       min-width: 120px;
       border-radius: $border-radius-md;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba($primary-color, 0.3);
+      @media (hover: hover) {
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba($primary-color, 0.3);
+        }
       }
 
       a {

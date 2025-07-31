@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr" dir="ltr">
+
 <head>
-  <script>
-    const path = window.location.pathname.split('/Portfolio/')[1] || '';
-    window.location.href = '/Portfolio/#' + (path ? path : '');
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page non trouvée - Guillaume Bourlier - Développeur Front-End</title>
+  <meta name="description" content="La page que vous cherchez n'existe pas. Retournez au portfolio de Guillaume Bourlier, développeur Front-End.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/webp" href="/assets/logo.webp" />
+  <link rel="apple-touch-icon" href="/assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
 </head>
+
 <body>
-  <p>Redirection en cours...</p>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
 </body>
+
 </html>
