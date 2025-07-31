@@ -53,7 +53,7 @@
       height: 180px;
       border-radius: 50%;
       overflow: hidden;
-      margin-bottom: $spacing-xs;
+      margin-bottom: 0;
       box-shadow: $shadow-default;
 
       img {
@@ -63,29 +63,30 @@
       }
     }
 
+    h1 {
+      font-size: $font-size-md;
+      margin-top: $spacing-lg;
+      color: $text-color;
+      text-shadow: $shadow-text;
+    }
+
+    .subtitle {
+      font-size: $font-size-xs;
+      color: $text-secondary;
+      text-shadow: $shadow-text;
+      margin-top: $spacing-sm;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
     .content {
       text-align: center;
       background-color: $background-light;
-      padding: $spacing-sm;
+      padding: $spacing-xs $spacing-sm $spacing-sm;
       border-radius: $border-radius-sm;
       width: 100%;
       box-sizing: border-box;
       word-wrap: break-word;
-
-      h1 {
-        font-size: $font-size-md;
-        margin: $spacing-xs 0;
-        color: $text-color;
-        text-shadow: $shadow-text;
-      }
-
-      .subtitle {
-        font-size: $font-size-xs;
-        color: $text-secondary;
-        text-shadow: $shadow-text;
-        margin: $spacing-sm 0;
-        line-height: 1.4;
-      }
 
       .icons {
         display: flex;
@@ -137,6 +138,7 @@
       margin-bottom: $spacing-sm;
       color: $primary-color;
       text-shadow: $shadow-text;
+      word-break: break-word;
       margin-top: 0px;
     }
 
@@ -145,16 +147,63 @@
       line-height: 1.6;
       color: $text-secondary;
       text-shadow: $shadow-text;
-      margin-bottom: $spacing-md;
+      margin-bottom: $spacing-xs;
     }
 
-    .scroll-indicator {
+    .soft-skills {
+      margin: $spacing-xs 0;
       text-align: center;
+
+      h3 {
+        font-size: $font-size-sm;
+        color: $text-color;
+        margin-bottom: $spacing-xs;
+        font-weight: 600;
+      }
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacing-xxs;
+      }
+      .skill-tag {
+        background-color: rgba($primary-color, 0.15);
+        color: $primary-color;
+        padding: 0.3rem 0.6rem;
+        border-radius: $border-radius-lg;
+        font-size: $font-size-xxs;
+        font-weight: 500;
+      }
+    }
+
+    .action-buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: $spacing-sm;
+      margin-top: $spacing-lg;
+      flex-wrap: wrap;
+    }
+
+    .scroll-button {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-xs;
+      padding: $spacing-xxs $spacing-sm;
+      background-color: transparent;
+      border: 1px solid $primary-color;
       color: $primary-color;
-      font-size: $font-size-md;
-      margin-top: 60px;
+      border-radius: $border-radius-lg;
+      font-size: $font-size-xs;
+      font-weight: 600;
       cursor: pointer;
-      animation: bounce 1.5s infinite;
+      animation: bounce 2s infinite;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $text-dark;
+      }
     }
   }
   @keyframes bounce {
@@ -184,28 +233,17 @@
     box-shadow: $shadow-default;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 5px;
-      background: $primary-color;
-      border-radius: $border-radius-sm 0 0 $border-radius-sm;
-    }
-
+    
     &:hover {
       transform: translateY(-5px);
-      box-shadow: $shadow-hover-card;
     }
 
     h2 {
       font-size: $font-size-lg;
       margin-bottom: $spacing-md;
-      color: $primary-color;
+      color: $text-color;
       text-shadow: $shadow-text;
+      word-break: break-word;
       text-align: center;
     }
   }
@@ -324,11 +362,12 @@
     .about,
     .experience-section,
     .education-section {
-      padding: $spacing-sm;
+      padding: $spacing-sm $spacing-xs;
 
       h2 {
-        font-size: $font-size-sm;
+        font-size: $font-size-xs;
         margin-bottom: $spacing-sm;
+
       }
 
       p {

@@ -14,6 +14,9 @@
     color: $primary-color;
     text-shadow: $shadow-text;
     background-color: $background-light;
+    display: inline-block;
+    padding: $spacing-xxs $spacing-sm;
+    border-radius: $border-radius-md;
   }
 
   .projects-grid {
@@ -34,7 +37,6 @@
     transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
     display: flex;
     flex-direction: column;
-    height: 400px;
     cursor: pointer;
 
     &:hover {
@@ -70,23 +72,77 @@
 
     .project-links {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: $spacing-xxs;
       margin-top: auto;
 
       a {
         @include button-style;
+        justify-content: center;
         padding: $spacing-xxs $spacing-xs;
         border-radius: $border-radius-xs;
         font-weight: 500;
         text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
 
         &:hover {
           background-color: $primary-hover-color;
         }
+      }
+    }
+  }
 
-        svg {
-          margin-left: 5px;
-        }
+  .more-projects-card {
+    @include card-style($background-tech);
+    width: 100%;
+    max-width: 900px;
+    margin: $spacing-lg auto 0;
+    padding: $spacing-sm;
+    border-radius: $border-radius-md;
+    text-align: center;
+
+    h3 {
+      font-size: $font-size-md;
+      color: $text-color;
+      margin-bottom: $spacing-sm;
+    }
+
+    .other-projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: $spacing-sm;
+    }
+
+    .other-project-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba($background-dark, 0.4);
+      padding: $spacing-xxs $spacing-xs;
+      border-radius: $border-radius-sm;
+    }
+
+    .other-project-title {
+      font-weight: 600;
+      font-size: $font-size-xxs;
+      color: $text-secondary;
+      text-align: left;
+    }
+
+    .other-project-links {
+      display: flex;
+      gap: $spacing-xxs;
+
+      a {
+        @include button-style;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
       }
     }
   }
@@ -107,6 +163,20 @@
 
     .projects-grid {
       grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      height: auto; // Permet à la carte de s'adapter à son contenu
+
+      .project-links {
+        flex-direction: column; // Empile les boutons verticalement
+        align-items: stretch; // Les boutons prennent toute la largeur
+        gap: $spacing-xxs;
+
+        a {
+          justify-content: center; // Centre le contenu du bouton
+        }
+      }
     }
   }
 }

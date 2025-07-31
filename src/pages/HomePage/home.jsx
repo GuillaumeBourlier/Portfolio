@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import profile from "@/assets/photo.webp";
 import cv from "@/assets/CV-Guillaume-Bourlier.pdf";
 import ExperienceCard from "../../components/cards/ExperienceCard";
@@ -10,7 +12,7 @@ const Home = () => {
   const experiences = [
     {
       id: 1,
-      title: "Formation Développeur Front-End",
+      title: "Développeur Front en apprentissage",
       company: "Openclassrooms",
       period: "2025",
       description:
@@ -19,21 +21,26 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Auditeur Qualité Hygiène et Environnemental",
+      title: "Auditeur qualité hygiène et environnemental",
       company: "Convergence",
       period: "2019 - 2024",
       description:
         "Réalisation d’audits hygiène, sécurité et conformité réglementaire pour des établissements de restauration. Rédaction de rapports détaillés et présentation des résultats en commissions clients. Mise en place et suivi des actions correctives (planification, reporting). Développement de compétences transposables en gestion de projet, rigueur et communication professionnelle.",
-      technologies: ["Qualité", "Process", "Sécurité", "Rédaction", "Reporting"],
+      technologies: [
+        "Qualité",
+        "Process",
+        "Sécurité",
+        "Rédaction",
+        "Reporting",
+      ],
     },
     {
       id: 3,
-      title: "Chef De Cuisine",
-      company: "Elior",
-      period: "2017 - 2019",
-      description:
-        "Responsable de la production culinaire et du bon fonctionnement de la cuisine pour un établissement de 1200 couverts.",
-      technologies: ["Qualité", "Process", "Gestion de stocks", "Management"],
+      title: "Chef de cuisine & Management en restauration",
+      company: "Elior / Sodexo / Accord / Les Galopins",
+      period: "2004 - 2019",
+      description: "Durant plus de 10 ans, j'ai évolué de Cuisinier à Chef Gérant, gérant des productions pour des sites allant jusqu'à 4000 couverts. J'ai piloté l'élaboration des menus, la gestion des stocks, l'encadrement d'équipes et le respect des normes qualité (HACCP, INCO), développant ainsi mon leadership, ma rigueur organisationnelle et ma capacité à résoudre des problèmes complexes sous pression.",
+      technologies: ["Gestion de production", "Organisation", "Normes qualité", "Planification", "Management"],
     },
   ];
 
@@ -43,25 +50,24 @@ const Home = () => {
       title: "Développeur d'application - React.JS (Formation en cours)",
       institution: "OpenClassrooms",
       year: "2025",
-      description:
-        "Formation intensive en développement front-end avec spécialisation React.",
+      description: "Parcours diplômant axé sur la maîtrise de l'écosystème React pour la construction d'applications web modernes. Le programme couvre la création de composants réutilisables, la gestion d'état avec Redux, l'interaction avec des API, ainsi que l'optimisation des performances (SEO, accessibilité) et le débogage d'applications complexes.",
     },
     {
       id: 2,
-      title: "BAC Professionnel - Hôtellerie Restauration",
-      institution: "Santos Dumont",
-      year: "2006",
-      description:
-        "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale.",
-    },
-    {
-      id: 3,
-      title: "Brevet d'Étude Profesionnel - Hôtellerie Restauration",
+      title: "Brevet d'étude profesionnel - Hôtellerie Restauration",
       institution: "Santos Dumont",
       year: "2004",
-      description:
-        "Formation pratique en cuisine, gestion des stocks, hygiène alimentaire, organisation de service en restauration collective et commerciale.",
+      description: "Initiation aux techniques culinaires de base, aux procédures d'hygiène et à l'organisation du travail en cuisine. Première approche de la gestion des matières premières et du service en restauration.",
     },
+  ];
+
+  const softSkills = [
+    "Gestion de projet & organisation",
+    "Communication & esprit d'équipe",
+    "Rigueur & souci du détail",
+    "Adaptabilité & apprentissage continu",
+    "Résolution de problèmes",
+    "Orientation client & UX",
   ];
 
   const scrollToExperience = () => {
@@ -78,9 +84,9 @@ const Home = () => {
             <div className="image-wrapper">
               <img src={profile} alt="Photo de profil de Guillaume Bourlier" />
             </div>
+            <h1>Guillaume Bourlier</h1>
+            <h2 className="subtitle">Développeur Front-End</h2>
             <div className="content">
-              <h1>Guillaume Bourlier</h1>
-              <h2 className="subtitle">Développeur Front-End</h2>
               <div className="icons">
                 <a
                   href="https://www.linkedin.com/in/guillaume-bourlier-683ab22b0"
@@ -114,7 +120,7 @@ const Home = () => {
             <h2>À propos de moi</h2>
             <p>
               Avec plus de 15 ans d'expérience dans le domaine de la
-              restauration et dans le contrôle qualité où l'excellence de
+              restauration et 5 ans dans le contrôle qualité où l'excellence de
               l'expérience utilisateur était ma priorité, j'ai transposé cette
               passion dans le monde du développement web. Aujourd'hui, je
               conçois des interfaces intuitives et performantes. Ma rigueur, ma
@@ -123,15 +129,33 @@ const Home = () => {
               engageantes.
             </p>
 
-            <div className="scroll-indicator" onClick={scrollToExperience}>
-              ⬇ En savoir + ⬇
+            <div className="soft-skills">
+              <h3>Soft Skills</h3>
+              <div className="skills-list">
+                {softSkills.map((skill) => (
+                  <span key={skill} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="action-buttons-container">
+              <button className="scroll-button" onClick={scrollToExperience} aria-label="Découvrir mon parcours">
+                Découvrir mon parcours
+                <FontAwesomeIcon icon={faChevronDown} />
+              </button>
+              <Link to="/projects" className="scroll-button" aria-label="Découvrir mes projets">
+                Découvrir mes projets
+                <FontAwesomeIcon icon={faChevronUp} />
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="bottom-section">
           <div className="experience-section">
-            <h2>Expérience Professionnelle</h2>
+            <h2>Expériences professionnelles</h2>
             <div className="experience-list">
               {experiences.map((exp) => (
                 <ExperienceCard
@@ -147,7 +171,7 @@ const Home = () => {
           </div>
 
           <div className="education-section">
-            <h2>Formation & Diplômes</h2>
+            <h2>Formations & diplômes</h2>
             <div className="education-list">
               {diplomes.map((diplome) => (
                 <EducationCard

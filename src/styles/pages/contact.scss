@@ -42,6 +42,9 @@
       margin-bottom: $spacing-xxs;
       color: $primary-color;
       background-color: $background-light;
+      display: inline-block;
+      padding: $spacing-xxs $spacing-sm;
+      border-radius: $border-radius-md;
     }
 
     p {
