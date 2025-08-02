@@ -140,3 +140,30 @@
     padding: $spacing-xxs;
   }
 }
+
+.experience-cta {
+  margin-top: $spacing-xs;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  text-decoration: none;
+  border-radius: $border-radius-xs;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $text-dark;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba($primary-color, 0.3);
+  }
+}

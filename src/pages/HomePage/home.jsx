@@ -2,7 +2,11 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faFolderOpen,
+} from "@fortawesome/free-solid-svg-icons";
 import profile from "@/assets/photo.webp";
 import cv from "@/assets/CV-Guillaume-Bourlier.pdf";
 import ExperienceCard from "../../components/cards/ExperienceCard";
@@ -13,12 +17,53 @@ const Home = () => {
   const experiences = [
     {
       id: 1,
-      title: "Développeur Front en apprentissage",
+      title: "Intégrateur Web (en formation)",
       company: "Openclassrooms",
       period: "2025",
-      description:
-        "Création d’une application de location immobilière avec React.js & ReactRouter : gestion des états, formulaires interactifs, navigation dynamique. Intégration front-end d’une application bancaire React : composants réutilisables, interface sécurisée et responsive.Optimisation SEO et accessibilité d’un site de photographe (amélioration de la performance Lighthouse).Débogage et amélioration UX d’un site événementiel (résolution de bugscritiques, refonte de l’expérience utilisateur).",
-      technologies: ["HTML", "CSS", "React", "Javascripts", "API", "Github"],
+      description: (
+        <>
+          <p>
+            Dans le cadre de ma formation Intégrateur Web chez OpenClassrooms,
+            j'ai réalisé un parcours complet de projets professionnalisants pour
+            maîtriser les compétences du développement front-end :
+          </p>
+          <ul className="experience-details-list">
+            <li>
+              <strong>
+                Création d’une application de location immobilière avec React :
+              </strong>{" "}
+              Développement de composants, gestion des états (useState,
+              useEffect), et mise en place de la navigation avec React Router.
+            </li>
+            <li>
+              <strong>
+                Intégration front-end d’une application bancaire :
+              </strong>{" "}
+              Utilisation de Redux pour la gestion d'état globale, interaction
+              avec une API pour les transactions, et création d'une interface
+              sécurisée.
+            </li>
+            <li>
+              <strong>Optimisation SEO et accessibilité :</strong> Audit et
+              amélioration d'un site de photographe existant, en optimisant les
+              performances (Lighthouse), le référencement naturel (SEO) et en
+              assurant la conformité aux normes d'accessibilité (WCAG).
+            </li>
+            <li>
+              <strong>Débogage et amélioration d'un site événementiel :</strong>{" "}
+              Analyse d'une base de code existante, identification et résolution
+              de bugs à l'aide des React Dev Tools, et refonte de l'expérience
+              utilisateur.
+            </li>
+          </ul>
+          <div className="experience-cta">
+            <Link to="/projects" className="button-link">
+              <FontAwesomeIcon icon={faFolderOpen} /> Voir les projets associés
+            </Link>
+          </div>
+        </>
+      ),
+      technologies: ["HTML", "CSS", "React", "JavaScript", "API", "Github"],
     },
     {
       id: 2,
@@ -127,15 +172,19 @@ const Home = () => {
           <div className="about">
             <h2>À propos de moi</h2>
             <p>
-             De l’art culinaire à l’art du pixel-perfect  ! Après plus de 15
-              ans à faire vivre des expériences mémorables dans la restauration,
-              puis 5 ans à chasser le moindre détail en contrôle qualité, j’ai
-              naturellement trouvé ma voie dans le développement web, là où
-              l’expérience utilisateur est reine. Aujourd’hui, je conçois des
-              interfaces web qui allient fluidité, esthétique et performance.
-              Rigoureux, créatif et résolument orienté solution, je transforme
-              les idées (même les plus floues) en applications claires,
-              efficaces et engageantes.
+              De l’art culinaire à l’art du pixel-perfect ! Depuis mon enfance,
+              deux passions m’animent : la cuisine, pour le plaisir de créer et
+              de partager, et l’informatique pour l’univers fascinant de la
+              technologie et de la création numérique. Après plus de 15 ans à
+              faire vivre des expériences marquantes dans la restauration, puis
+              5 ans en tant qu’auditeur qualité hygiène et environnementale à
+              affiner mon sens du détail, j’ai naturellement trouvé ma voie dans
+              le développement web, là où l’expérience utilisateur est reine.
+              Aujourd’hui, je conçois des interfaces web qui allient fluidité,
+              esthétique et performance. Rigoureux, créatif et résolument
+              orienté solution, je transforme les idées (même les plus floues)
+              en applications claires, efficaces et engageantes, toujours
+              centrées sur l’utilisateur.
             </p>
 
             <div className="soft-skills">

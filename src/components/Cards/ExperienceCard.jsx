@@ -8,7 +8,7 @@ const ExperienceCard = ({ title, company, period, description, technologies }) =
         <span className="company">{company}</span>
         <span className="period">{period}</span>
       </div>
-      <p className="description">{description}</p>
+      <div className="description">{description}</div>
       {technologies && (
         <div className="technologies">
           {technologies.map((tech, index) => (

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useContext } from "react";
 import { ThemeProvider, ThemeContext } from "./components/Theme/ThemeContext";
 import Navbar from "./components/NavBar/Navbar";
@@ -23,12 +23,11 @@ function AppContent() {
       {isLoading ? (
         <Loader onFinish={handleLoaderFinish} />
       ) : (
-        <Router basename="/Portfolio">
+        <Router>
           <div className={`app ${theme}`}>
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* <Route index element={<Home />} /> */}
               <Route path="/competencies" element={<Competencies />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
