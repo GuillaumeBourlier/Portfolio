@@ -17,7 +17,7 @@ const Home = () => {
   const experiences = [
     {
       id: 1,
-      title: "Intégrateur Web (en formation)",
+      title: "Intégrateur Web Junior",
       company: "Openclassrooms",
       period: "2025",
       description: (
@@ -117,11 +117,8 @@ const Home = () => {
   ];
 
   const softSkills = [
-    "Gestion de projet & organisation",
     "Communication & esprit d'équipe",
     "Rigueur & souci du détail",
-    "Adaptabilité & apprentissage continu",
-    "Résolution de problèmes",
     "Orientation client & UX",
   ];
 
@@ -174,17 +171,16 @@ const Home = () => {
             <p>
               De l’art culinaire à l’art du pixel-perfect ! Depuis mon enfance,
               deux passions m’animent : la cuisine, pour le plaisir de créer et
-              de partager, et l’informatique pour l’univers fascinant de la
-              technologie et de la création numérique. Après plus de 15 ans à
-              faire vivre des expériences marquantes dans la restauration, puis
-              5 ans en tant qu’auditeur qualité hygiène et environnementale à
-              affiner mon sens du détail, j’ai naturellement trouvé ma voie dans
-              le développement web, là où l’expérience utilisateur est reine.
-              Aujourd’hui, je conçois des interfaces web qui allient fluidité,
-              esthétique et performance. Rigoureux, créatif et résolument
-              orienté solution, je transforme les idées (même les plus floues)
-              en applications claires, efficaces et engageantes, toujours
-              centrées sur l’utilisateur.
+              de partager, et l’informatique, pour son univers fascinant de
+              technologie et de créativité. Après plus de 15 ans à créer des
+              expériences marquantes dans la restauration, puis 5 ans en tant
+              qu’auditeur qualité hygiène et environnementale à affiner mon sens
+              du détail, j’ai trouvé ma voie dans le développement web, où
+              l’expérience utilisateur est au centre de tout. Aujourd’hui, je
+              conçois des interfaces fluides, esthétiques et performantes, en
+              alliant rigueur, créativité et sens pratique. Mon objectif ?
+              Transformer les idées en applications claires, efficaces et
+              engageantes, toujours pensées pour l’utilisateur.
             </p>
 
             <div className="soft-skills">
