@@ -26,7 +26,7 @@ function Navbar() {
       </h2>
 
       <button
-        className="burger-menu"
+        className={`burger-menu ${isMenuOpen ? "open" : ""}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Ouvrir ou fermer le menu de navigation"
       >
@@ -38,13 +38,13 @@ function Navbar() {
           <li>
             <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
               <FontAwesomeIcon icon={faUser} />
-              <span className="nav-text">À propos</span>
+              <span className="nav-text">Accueil</span>
             </NavLink>
           </li>
           <li>
             <NavLink to="/competencies" onClick={() => setIsMenuOpen(false)}>
               <FontAwesomeIcon icon={faLaptopCode} />
-              <span className="nav-text">Compétences</span>
+              <span className="nav-text">Mon parcours</span>
             </NavLink>
           </li>
           <li>
@@ -59,14 +59,22 @@ function Navbar() {
               <span className="nav-text">Contact</span>
             </NavLink>
           </li>
+          <li>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleTheme();
+                setIsMenuOpen(false);
+              }}
+              role="button"
+              aria-label="Changer le contraste"
+            >
+              <FontAwesomeIcon icon={faCircleHalfStroke} />
+              <span className="nav-text">Contraste</span>
+            </a>
+          </li>
         </ul>
-        <button
-          onClick={toggleTheme}
-          className="contrast-button"
-          aria-label="Changer le contraste"
-        >
-          <FontAwesomeIcon icon={faCircleHalfStroke} size="lg" />
-        </button>
       </div>
     </nav>
   );

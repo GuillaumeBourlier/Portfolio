@@ -1,130 +1,60 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
-  faChevronDown,
-  faChevronUp,
-  faFolderOpen,
-} from "@fortawesome/free-solid-svg-icons";
+  faLinkedin,
+  faGithub,
+  faHtml5,
+  faCss3Alt,
+  faJsSquare,
+  faReact,
+} from "@fortawesome/free-brands-svg-icons";
 import profile from "@/assets/photo.webp";
 import cv from "@/assets/CV-Guillaume-Bourlier.pdf";
-import ExperienceCard from "../../components/cards/ExperienceCard";
-import EducationCard from "../../components/cards/EducationCard";
+import reduxLogo from "@/assets/redux.webp";
+import nextjsLogo from "@/assets/nextjs-logo.webp";
 
 const Home = () => {
-  const bottomSectionRef = useRef(null);
-  const experiences = [
-    {
-      id: 1,
-      title: "Intégrateur Web Junior",
-      company: "Openclassrooms",
-      period: "2025",
-      description: (
-        <>
-          <p>
-            Dans le cadre de ma formation Intégrateur Web chez OpenClassrooms,
-            j'ai réalisé un parcours complet de projets professionnalisants pour
-            maîtriser les compétences du développement front-end :
-          </p>
-          <ul className="experience-details-list">
-            <li>
-              <strong>
-                Création d’une application de location immobilière avec React :
-              </strong>{" "}
-              Développement de composants, gestion des états (useState,
-              useEffect), et mise en place de la navigation avec React Router.
-            </li>
-            <li>
-              <strong>
-                Intégration front-end d’une application bancaire :
-              </strong>{" "}
-              Utilisation de Redux pour la gestion d'état globale, interaction
-              avec une API pour les transactions, et création d'une interface
-              sécurisée.
-            </li>
-            <li>
-              <strong>Optimisation SEO et accessibilité :</strong> Audit et
-              amélioration d'un site de photographe existant, en optimisant les
-              performances (Lighthouse), le référencement naturel (SEO) et en
-              assurant la conformité aux normes d'accessibilité (WCAG).
-            </li>
-            <li>
-              <strong>Débogage et amélioration d'un site événementiel :</strong>{" "}
-              Analyse d'une base de code existante, identification et résolution
-              de bugs à l'aide des React Dev Tools, et refonte de l'expérience
-              utilisateur.
-            </li>
-          </ul>
-          <div className="experience-cta">
-            <Link to="/projects" className="button-link">
-              <FontAwesomeIcon icon={faFolderOpen} /> Voir les projets associés
-            </Link>
-          </div>
-        </>
-      ),
-      technologies: ["HTML", "CSS", "React", "JavaScript", "API", "Github"],
-    },
-    {
-      id: 2,
-      title: "Auditeur qualité hygiène et environnemental",
-      company: "Convergence",
-      period: "2019 - 2024",
-      description:
-        "Réalisation d’audits hygiène, sécurité et conformité réglementaire pour des établissements de restauration. Rédaction de rapports détaillés et présentation des résultats en commissions clients. Mise en place et suivi des actions correctives (planification, reporting). Développement de compétences transposables en gestion de projet, rigueur et communication professionnelle.",
-      technologies: [
-        "Qualité",
-        "Process",
-        "Sécurité",
-        "Rédaction",
-        "Reporting",
-      ],
-    },
-    {
-      id: 3,
-      title: "Chef de cuisine & Management en restauration",
-      company: "Elior / Sodexo / Accord / Les Galopins",
-      period: "2004 - 2019",
-      description:
-        "Durant plus de 10 ans, j'ai évolué de Cuisinier à Chef Gérant, gérant des productions pour des sites allant jusqu'à 4000 couverts. J'ai piloté l'élaboration des menus, la gestion des stocks, l'encadrement d'équipes et le respect des normes qualité (HACCP, INCO), développant ainsi mon leadership, ma rigueur organisationnelle et ma capacité à résoudre des problèmes complexes sous pression.",
-      technologies: [
-        "Gestion de production",
-        "Organisation",
-        "Normes qualité",
-        "Planification",
-        "Management",
-      ],
-    },
-  ];
-
-  const diplomes = [
-    {
-      id: 1,
-      title: "Développeur d'application - React.JS (Formation en cours)",
-      institution: "OpenClassrooms",
-      year: "2025",
-      description:
-        "Parcours diplômant axé sur la maîtrise de l'écosystème React pour la construction d'applications web modernes. Le programme couvre la création de composants réutilisables, la gestion d'état avec Redux, l'interaction avec des API, ainsi que l'optimisation des performances (SEO, accessibilité) et le débogage d'applications complexes.",
-    },
-    {
-      id: 2,
-      title: "Brevet d'étude profesionnel - Hôtellerie Restauration",
-      institution: "Santos Dumont",
-      year: "2004",
-      description:
-        "Initiation aux techniques culinaires de base, aux procédures d'hygiène et à l'organisation du travail en cuisine. Première approche de la gestion des matières premières et du service en restauration.",
-    },
-  ];
-
   const softSkills = [
     "Communication & esprit d'équipe",
     "Rigueur & souci du détail",
     "Orientation client & UX",
   ];
 
-  const scrollToExperience = () => {
-    bottomSectionRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  const techs = [
+    {
+      label: "HTML",
+      icon: faHtml5,
+      type: "fontawesome",
+      color: "#E34F26",
+      link: "https://developer.mozilla.org/fr/docs/Web/HTML",
+    },
+    {
+      label: "CSS",
+      icon: faCss3Alt,
+      type: "fontawesome",
+      color: "#1572B6",
+      link: "https://developer.mozilla.org/fr/docs/Web/CSS",
+    },
+    {
+      label: "JavaScript",
+      icon: faJsSquare,
+      type: "fontawesome",
+      color: "#F7DF1E",
+      link: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+    },
+    {
+      label: "React",
+      icon: faReact,
+      type: "fontawesome",
+      color: "#61DAFB",
+      link: "https://fr.react.dev/",
+    },
+    {
+      label: "Redux",
+      icon: reduxLogo,
+      type: "webp",
+      link: "https://redux.js.org/",
+    },
+  ];
 
   return (
     <main>
@@ -172,15 +102,20 @@ const Home = () => {
               De l’art culinaire à l’art du pixel-perfect ! Depuis mon enfance,
               deux passions m’animent : la cuisine, pour le plaisir de créer et
               de partager, et l’informatique, pour son univers fascinant de
-              technologie et de créativité. Après plus de 15 ans à créer des
-              expériences marquantes dans la restauration, puis 5 ans en tant
-              qu’auditeur qualité hygiène et environnementale à affiner mon sens
-              du détail, j’ai trouvé ma voie dans le développement web, où
-              l’expérience utilisateur est au centre de tout. Aujourd’hui, je
-              conçois des interfaces fluides, esthétiques et performantes, en
-              alliant rigueur, créativité et sens pratique. Mon objectif ?
-              Transformer les idées en applications claires, efficaces et
-              engageantes, toujours pensées pour l’utilisateur.
+              technologie et de créativité. Pendant plus de 15 ans dans la
+              restauration, j’ai développé un véritable sens de l’expérience
+              utilisateur, en apprenant à anticiper les besoins des clients et à
+              créer des moments marquants grâce à des services personnalisés et
+              attentifs. Puis, en tant qu’auditeur qualité hygiène et
+              environnementale pendant 5 ans, j’ai affiné mon œil pour le détail
+              et ma capacité à analyser et optimiser des processus, toujours
+              dans une logique d’amélioration continue centrée sur l’utilisateur
+              final. Aujourd’hui, ces compétences se prolongent naturellement
+              dans le développement web : je conçois des interfaces fluides,
+              esthétiques et performantes, en alliant rigueur, créativité et
+              sens pratique. Mon objectif ? Transformer les idées en
+              applications claires, efficaces et engageantes, toujours pensées
+              pour offrir la meilleure expérience utilisateur possible.
             </p>
 
             <div className="soft-skills">
@@ -193,59 +128,64 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
-            <div className="action-buttons-container">
-              <button
-                className="scroll-button"
-                onClick={scrollToExperience}
-                aria-label="Découvrir mon parcours"
-              >
-                Découvrir mon parcours
-                <FontAwesomeIcon icon={faChevronDown} />
-              </button>
-              <Link
-                to="/projects"
-                className="scroll-button"
-                aria-label="Découvrir mes projets"
-              >
-                Découvrir mes projets
-                <FontAwesomeIcon icon={faChevronUp} />
-              </Link>
-            </div>
           </div>
         </div>
 
-        <div className="bottom-section" ref={bottomSectionRef}>
-          <div className="experience-section">
-            <h2>Expériences professionnelles</h2>
-            <div className="experience-list">
-              {experiences.map((exp) => (
-                <ExperienceCard
-                  key={exp.id}
-                  title={exp.title}
-                  company={exp.company}
-                  period={exp.period}
-                  description={exp.description}
-                  technologies={exp.technologies}
-                />
-              ))}
-            </div>
-          </div>
+        <div className="bottom-section" style={{ maxWidth: "900px" }}>
+          <section id="competencies" className="competencies-section">
+            <h2>Stack Technique</h2>
+            <p className="competencies-intro">
+              Voici un aperçu des technologies que j’utilise dans mes projets :
+            </p>
 
-          <div className="education-section">
-            <h2>Formations & diplômes</h2>
-            <div className="education-list">
-              {diplomes.map((diplome) => (
-                <EducationCard
-                  key={diplome.id}
-                  title={diplome.title}
-                  institution={diplome.institution}
-                  year={diplome.year}
-                  description={diplome.description}
-                />
+            <ul className="tech-list">
+              {techs.map((tech) => (
+                <li key={tech.label} className="tech-item">
+                  <a
+                    href={tech.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`En savoir plus sur ${tech.label}`}
+                  >
+                    {tech.type === "fontawesome" ? (
+                      <FontAwesomeIcon
+                        icon={tech.icon}
+                        size="2x"
+                        style={{ color: tech.color }}
+                        aria-hidden="true"
+                      />
+                    ) : (
+                      <img
+                        src={tech.icon}
+                        alt={tech.label}
+                        className="svg-icon"
+                        loading="lazy"
+                      />
+                    )}
+                    <span>{tech.label}</span>
+                  </a>
+                </li>
               ))}
+            </ul>
+
+            <div className="coming-soon">
+              <h3>In progress</h3>
+              <div className="upcoming-skill-item">
+                <a
+                  href="https://nextjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="En savoir plus sur Next.js"
+                >
+                  <img
+                    src={nextjsLogo}
+                    alt="Logo Next.js"
+                    className="webp-icon"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
     </main>

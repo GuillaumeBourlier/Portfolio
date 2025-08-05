@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const EducationCard = ({ title, institution, year, description }) => {

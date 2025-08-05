@@ -80,28 +80,42 @@
 }
 
 .experience-cta {
-  margin-top: $spacing-xs;
   display: flex;
-  justify-content: flex-start;
-}
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
 
-.button-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem 1.2rem;
-  background-color: transparent;
-  color: $primary-color;
-  border: 2px solid $primary-color;
-  text-decoration: none;
-  border-radius: $border-radius-xs;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  .button-link {
+    @include button-style;
+    font-size: $font-size-xxs;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
-  &:hover {
-    background-color: $primary-color;
-    color: $text-dark;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba($primary-color, 0.3);
+    &:hover {
+      background-color: rgba($primary-hover-color, 0.76);
+      transform: translateY(-3px);
+      box-shadow: $shadow-hover-card;
+    }
+  }
+
+  .tech-button {
+    background-color: rgba($primary-color, 0.15);
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+
+  @include respond-to(sm) {
+    .button-link {
+      font-size: 0.7rem; 
+      padding: 0.2rem 0.4rem; 
+    }
   }
 }

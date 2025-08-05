@@ -12,6 +12,13 @@
 @use "./pages/projects.scss";
 @use "./components/loader.scss";
 
+.competencies-section {
+  .competencies-intro {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -105,79 +112,86 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
 
 .app.high-contrast {
 
-  color: #212529 !important;
+  background-color: #f5f5f5 !important;
 
-
-  .home-section, .projects-container, .contact-section, .competencies, .error-page {
+  .home-section, .projects-container, .contact-section, .competencies-page, .error-page {
     background-image: none !important;
-       background-color: transparent !important;
-    &::before { background-color: transparent !important; backdrop-filter: none !important; }
+    background-color: transparent !important;
+    &::before { 
+      background-color: transparent !important; 
+      backdrop-filter: none !important; 
+    }
   }
-
 
   .navbar, .footer {
-    background-color: #d8d8d89d !important;
+    background-color: #e0e0e0 !important;
     color: #000000 !important;
-    border-bottom: 1px solid #dee2e6 ;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05) ;
+    border-bottom: 2px solid #000000;
+    box-shadow: none;
   }
   .footer { 
-    border-top: 1px solid #dee2e6 ; 
+    border-top: 2px solid #000000; 
     border-bottom: none; 
   }
 
   .navbar ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
-
-  .bottom-section, .card, .competency-card, .error-content, .experience-card, .education-card, .tech-item {
-    background-color: #ffffff ;
-    border: 1px solid #dee2e6 ;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  .about, .bottom-section, .card, .competency-card, .experience-card, .education-card, .tech-item, .experience-section, .education-section, .project-card, .more-projects-card, .contact-form, .contact-info, .coming-soon {
+    background-color: #ffffff !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none;
     backdrop-filter: none; 
-  }
-
-.coming-soon, .project-card, .more-projects-card {
-    background-color: transparent !important;
   }
 
   .more-projects-card {
     .other-project-item {
-      background-color: rgba(179, 179, 179, 0.5);
+      background-color: #e0e0e0;
     }
   }
 
+
   h1, h2, h3, h4, h5, h6, p, li, span, .description, .subtitle, label, .scroll-indicator {
-    color: #212529 !important;
+    color: #000000 !important;
     text-shadow: none !important;
     background-color: transparent !important;
   }
 
-
   .coming-soon img {
-    background-color: #e9ecef !important; 
-    padding: 0.5rem !important;
-    border-radius: 8px !important;
+    background-color: #e9ecef; 
+    padding: 0.5rem;
+    border-radius: 8px;
   }
 
 
-  a { color: #0d6efd !important; } 
-  a:hover { color: #0a58ca !important; }
-  .navbar a { color: #000000 !important; &:hover { color: #0d6efd !important; } }
-  .contrast-button, .icons a { color: #000000 !important; &:hover { color: #0d6efd !important; } }
-  // Utilisation de la couleur primaire du site pour les boutons en mode contraste
-  .cv-button, .contact-form button, .project-links a, .other-project-links a, .button-link {
-    background-color: #61dafb !important;
-    color: $text-dark !important; // Texte plus sombre pour un meilleur contraste
-    // Unification de la taille des boutons pour la cohérence en mode contraste
-    padding: 0.8rem 1.2rem !important;
-    font-size: 0.9rem !important;
-    border: 2px solid $primary-color !important;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+  a { 
+    color: #0056b3 !important;
+    text-decoration: underline !important;
+  } 
+  a:hover { 
+    color: #003d82 !important; 
+  }
+  
+  .navbar a,
+  .contrast-button, 
+  .icons a { 
+    color: #000000 !important; 
+    text-decoration: none !important;
     &:hover { 
-      background-color: $primary-color !important;
-      border-color: $primary-color !important;
+      color: #0056b3 !important; 
+    } 
+  }
+  
+  .cv-button, .contact-form button, .project-links a, .other-project-links a, .button-link {
+    background-color: #0056b3 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    
+    &:hover { 
+      background-color: #003d82 !important;
     }
   }
 
@@ -192,30 +206,28 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
   }
 
   .soft-skills .skill-tag {
-    background-color: #0d6efd !important;
+    background-color: #000000 !important;
     color: #ffffff !important;
+    border: none;
   }
 
   input, textarea {
     background-color: #ffffff !important;
-    color: #212529 !important;
-    border: 1px solid #ced4da !important;
-    &:focus {
-      border-color: #86b7fe !important;
-      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
-    }
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
     &::placeholder {
-      color: #6c757d !important;
+      color: #555555;
+    }
+    &:focus {
+      outline: 3px solid #ffbf00;
+      box-shadow: none;
     }
   }
 }
 
 @include respond-to(md) {
-  body {
-    padding: 0 1rem;
-  }
-
   .navbar {
+    flex-direction: column; 
     justify-content: center;
     gap: 1rem;
 
@@ -245,6 +257,30 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
 
         .svg-inline--fa {
           font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(sm) {
+  body {
+    padding: 0;
+  }
+
+  .navbar {
+    .nav-title {
+      font-size: 1rem; 
+    }
+
+    ul {
+      gap: 0.5rem; 
+      justify-content: center; 
+       li a {
+        padding: 0.2rem 0.4rem;
+        gap: 0.3rem;
+        .nav-text {
+          font-size: 0.75rem; 
         }
       }
     }

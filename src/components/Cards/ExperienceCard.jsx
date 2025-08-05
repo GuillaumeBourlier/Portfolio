@@ -9,10 +9,12 @@ const ExperienceCard = ({ title, company, period, description, technologies }) =
         <span className="period">{period}</span>
       </div>
       <div className="description">{description}</div>
-      {technologies && (
+      {technologies && technologies.length > 0 && (
         <div className="technologies">
-          {technologies.map((tech, index) => (
-            <span key={index} className="tech-tag">{tech}</span>
+          {technologies.map((tech) => (
+            <span key={tech} className="tech-tag">
+              {tech}
+            </span>
           ))}
         </div>
       )}

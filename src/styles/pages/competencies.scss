@@ -1,208 +1,77 @@
 @use "~styles/layout/variables" as *;
 @use "~styles/layout/mixins" as *;
-.competencies {
+
+.competencies-page {
   @include background-overlay(true);
-  padding: $spacing-lg $spacing-sm;
-  text-align: center;
+  padding: $spacing-lg $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  align-items: center;
+  width: 100%;
   min-height: 92vh;
-  color: $text-color;
 
   &::before {
     background-color: $background-dark;
   }
-
-  h2 {
-    text-align: center;
-    margin-bottom: $spacing-sm;
-    font-weight: 700;
-    font-size: $font-size-xl;
-    color: $primary-color;
-    text-shadow: $shadow-text;
+  
+  .experience-section,
+  .education-section {
+    width: 100%;
+    max-width: $container-xl;
     background-color: $background-light;
-    display: inline-block;
-    padding: $spacing-xxs $spacing-sm;
+    padding: $spacing-md;
     border-radius: $border-radius-md;
-  }
-
-  .competencies-intro {
-    font-size: $font-size-xs;
-    color: $text-color;
-    max-width: $container-sm;
-    margin: 0 auto $spacing-lg;
-    line-height: 1.5;
-    text-shadow: $shadow-text;
-    background-color: $background-light;
-    padding: $spacing-xs;
-    border-radius: $border-radius-sm;
-    font-style: italic;
     box-shadow: $shadow-default;
-  }
-
-  .tech-list {
-    display: flex;
-    justify-content: center;
-    gap: $spacing-md;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin-bottom: $spacing-lg;
-
-
-    
-    .tech-item {
-      @include card-style($background-tech);
-      min-width: 120px;
-      border-radius: $border-radius-md;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      @media (hover: hover) {
-        &:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 8px 25px rgba($primary-color, 0.3);
-        }
-      }
-
-      a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-weight: 600;
-        color: $text-color;
-        padding: $spacing-xs;
-        text-decoration: none;
-
-        span {
-          margin-top: $spacing-xxs;
-          font-size: $font-size-xs;
-        }
-
-        svg,
-        .svg-icon,
-        img {
-          width: 40px;
-          height: 40px;
-          object-fit: contain;
-        }
-      }
-    }
-  }
-
-  .coming-soon {
-    max-width: $container-sm;
-    margin: 0 auto;
-    background-color: $background-coming-soon;
-    border-radius: $border-radius-md;
-    padding: $spacing-xs $spacing-sm;
-    color: $text-color;
-    text-align: center;
-    box-shadow: $shadow-default;
-
-    h3 {
-      margin-bottom: $spacing-xxs;
-    }
-
-    .upcoming-skill-item {
-      display: inline-block;
-
-      a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: $spacing-xxs;
-        text-decoration: none;
-        color: inherit;
-        font-weight: 600;
-        transition: transform 0.2s ease;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-
-        img, .webp-icon {
-          width: 200px;
-          height: 100px;
-          object-fit: contain;
-          filter: invert(1);
-        }
-      }
-    }
-  }
-
-  @include respond-to(xl) {
-    padding: $spacing-xl $spacing-sm;
-
-    .competencies-intro {
-      max-width: $container-md;
-    }
-
-    .tech-list {
-      gap: 2.5rem;
-    }
-  }
-
-  @include respond-to(lg) {
-    padding: $spacing-lg $spacing-xs;
 
     h2 {
-      font-size: $font-size-lg;
+      font-size: $font-size-xl;
+      color: $primary-color;
+      text-align: center;
+      margin-bottom: $spacing-md;
+      text-shadow: $shadow-text;
     }
-    
-    .competencies-intro {
-      font-size: 1.1rem;
-    }
-    
-    .tech-list {
-      gap: 1.8rem;
-      
-      .tech-item {
-        min-width: 110px;
-      }
+  }
+  
+  .experience-details-list {
+    list-style-type: disc;
+    padding-left: $spacing-md;
+    margin: $spacing-xs 0;
+    font-size: $font-size-xxs;
+    color: $text-secondary;
+    line-height: 1.6;
+  
+    li {
+      margin-bottom: $spacing-xxs;
     }
   }
 
   @include respond-to(md) {
-    padding: $spacing-md $spacing-xs;
-    text-align: center;
-    background-attachment: scroll;
+    padding: $spacing-md $spacing-sm;
 
-    h2 {
-      font-size: $font-size-md;
+    .experience-section,
+    .education-section {
+      padding: $spacing-sm;
+      h2 {
+        font-size: $font-size-lg;
+      }
     }
+  }
 
-    .competencies-intro {
-    margin-bottom: $spacing-sm;
-    font-size: $font-size-xs;
-    }
+  @include respond-to(sm) {
+    padding: $spacing-sm $spacing-xxs;
+    gap: $spacing-md;
 
-    .tech-list {
-      margin-bottom: $spacing-md;
-          gap: $spacing-sm;
-    flex-direction: column; 
- 
-
-      .tech-item {
-        padding: $spacing-xxs;
-        min-width: 90px;
-
-        svg,
-        .svg-icon,
-        img {
-          width: 30px;
-          height: 30px;
-        }
+    .experience-section,
+    .education-section {
+      padding: $spacing-sm $spacing-xs;
+      h2 {
+        font-size: $font-size-md;
       }
     }
 
-.coming-soon {
-  background: rgba($background-coming-soon, 0.8);
-  padding: $spacing-sm;
-  border-radius: $border-radius-md;
-  margin-top: $spacing-lg;
-
-  h3 {
-    font-size: $font-size-md;
-    color: $primary-color;
-  }
-}
+    .experience-details-list {
+      padding-left: $spacing-sm;
     }
   }
+}

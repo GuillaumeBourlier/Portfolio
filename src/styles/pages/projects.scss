@@ -1,5 +1,6 @@
 @use "~styles/layout/variables" as *;
 @use "~styles/layout/mixins" as *;
+
 .projects-container {
   @include background-overlay(true);
   padding: $spacing-lg $spacing-sm;
@@ -25,8 +26,11 @@
     gap: $spacing-sm;
     padding: 0;
 
-    &:hover > .project-card:not(:hover) {
-      opacity: 0.3;
+    // L'effet de survol est maintenant conditionnel aux appareils avec souris
+    @media (hover: hover) {
+      &:hover > .project-card:not(:hover) {
+        opacity: 0.3;
+      }
     }
   }
 
@@ -39,6 +43,7 @@
     flex-direction: column;
     cursor: pointer;
 
+    // Le survol ne s'applique que sur les appareils qui le supportent
     @media (hover: hover) {
       &:hover {
         transform: translateY(-5px);
@@ -115,34 +120,51 @@
 
     .other-projects-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: $spacing-sm;
+
+      @media (min-width: $screen-md) {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      }
     }
 
     .other-project-item {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       background-color: rgba($background-dark, 0.4);
-      padding: $spacing-xxs $spacing-xs;
+      padding: $spacing-xs $spacing-sm;
       border-radius: $border-radius-sm;
+      flex-direction: column;
+      gap: $spacing-xxs;
+
+
+      @media (min-width: $screen-md) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: $spacing-sm;
+      }
     }
 
     .other-project-title {
       font-weight: 600;
       font-size: $font-size-xxs;
       color: $text-secondary;
-      text-align: left;
+      text-align: center;
+      
+      @media (min-width: $screen-md) {
+        text-align: left;
+      }
     }
 
     .other-project-links {
       display: flex;
+      flex-shrink: 0;
       gap: $spacing-xxs;
 
       a {
         @include button-style;
-        padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
         display: flex;
         align-items: center;
         gap: 0.4rem;
@@ -174,16 +196,22 @@
 
     .project-card {
       height: auto; 
+      transition: none; 
 
       .project-links {
-        flex-direction: column; 
-        align-items: stretch; 
-        gap: $spacing-xxs;
-
-        a {
-          justify-content: center;
-        }
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
       }
+    }
+  }
+  
+  @include respond-to(sm) {
+    padding: $spacing-md $spacing-xxs;
+    h2 {
+        font-size: $font-size-sm;
+        margin-bottom: $spacing-md;
     }
   }
 }

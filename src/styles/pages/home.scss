@@ -16,7 +16,7 @@
     justify-content: center;
     gap: $spacing-md;
     width: 100%;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-xxs;
     flex-wrap: wrap;
 
     @include respond-to(lg) {
@@ -33,9 +33,8 @@
     gap: $spacing-md;
     width: 100%;
     max-width: $container-xl;
-    flex-wrap: wrap;
 
-    @include respond-to(lg) {
+    @include respond-to(md) {
       flex-direction: column;
       gap: $spacing-sm;
     }
@@ -56,12 +55,7 @@
       overflow: hidden;
       margin-bottom: 0;
       box-shadow: $shadow-default;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      img { width: 100%; height: 100%; object-fit: cover; }
     }
 
     h1 {
@@ -94,14 +88,10 @@
         justify-content: center;
         gap: $spacing-sm;
         margin-top: $spacing-xs;
-
         a {
           color: $text-color;
           transition: color 0.3s;
-
-          &:hover {
-            color: $primary-color;
-          }
+          &:hover { color: $primary-color; }
         }
       }
 
@@ -112,7 +102,6 @@
         margin-top: $spacing-sm;
         text-decoration: none;
         width: auto;
-
         &:hover {
           background-color: rgba($primary-hover-color, 0.76);
           transform: translateY(-5px);
@@ -154,21 +143,18 @@
     .soft-skills {
       margin: $spacing-xs 0;
       text-align: center;
-
       h3 {
         font-size: $font-size-sm;
         color: $text-color;
         margin-bottom: $spacing-xs;
         font-weight: 600;
       }
-
       .skills-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: $spacing-xxs;
       }
-
       .skill-tag {
         background-color: rgba($primary-color, 0.15);
         color: $primary-color;
@@ -178,48 +164,16 @@
         font-weight: 500;
       }
     }
-
-    .action-buttons-container {
-      display: flex;
-      justify-content: center;
-      gap: $spacing-sm;
-      margin-top: $spacing-lg;
-      flex-wrap: wrap;
-    }
-
-    .scroll-button {
-      display: inline-flex;
-      align-items: center;
-      gap: $spacing-xs;
-      padding: $spacing-xxs $spacing-sm;
-      background-color: transparent;
-      border: 1px solid $primary-color;
-      color: $primary-color;
-      border-radius: $border-radius-lg;
-      font-size: $font-size-xs;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-decoration: none;
-
-      &:hover {
-        background-color: $primary-color;
-        color: $text-dark;
-      }
-    }
   }
 
-  .experience-section,
-  .education-section {
-    flex: 1;
+  .competencies-section {
     width: 100%;
-    border-radius: $border-radius-md;
-    padding: $spacing-lg;
+    padding: $spacing-sm $spacing-xs;
     box-sizing: border-box;
-    margin-top: 0;
     box-shadow: $shadow-default;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: $background-light;
+    border-radius: $border-radius-md;
 
     h2 {
       font-size: $font-size-md;
@@ -229,153 +183,137 @@
       word-break: break-word;
       text-align: center;
     }
-  }
 
-  .experience-list,
-  .education-list {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-md;
-
-    .card {
-      background: rgba($background-tech, 0.6);
-      border-radius: $border-radius-sm;
-      padding: $spacing-md;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      @media (hover: hover) {
-        &:hover {
-          transform: translateY(-3px);
-          box-shadow: $shadow-hover-card;
-        }
+    .competencies-intro {
+      font-size: $font-size-xs;
+      color: $text-secondary;
+      max-width: $container-md;
+      margin: 0 auto $spacing-lg;
+      line-height: 1.5;
+      font-style: italic;
+      // AJOUTÉ : Réduction du padding pour le texte d'intro
+      @include respond-to(sm) {
+        padding: 0 $spacing-xxs;
       }
+    }
 
-      .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: $spacing-xs;
-
-        h3 {
-          font-size: $font-size-md;
+    .tech-list {
+      display: flex;
+      justify-content: center;
+      gap: $spacing-md;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin-bottom: $spacing-lg;
+      .tech-item {
+        @include card-style($background-tech);
+        min-width: 120px;
+        border-radius: $border-radius-md;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        @media (hover: hover) {
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba($primary-color, 0.3);
+          }
+        }
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-weight: 600;
           color: $text-color;
-          margin: 0;
-        }
-
-        .period {
-          font-size: $font-size-xxs;
-          color: $text-secondary;
+          padding: $spacing-xs;
+          text-decoration: none;
+          span {
+            margin-top: $spacing-xxs;
+            font-size: $font-size-xs;
+          }
+          svg, .svg-icon, img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+          }
         }
       }
+    }
 
-      .subtitle {
-        font-size: $font-size-xs;
+    .coming-soon {
+      max-width: $container-sm;
+      margin: $spacing-md auto 0;
+      background-color: $background-coming-soon;
+      border-radius: $border-radius-md;
+      padding: $spacing-xs $spacing-sm;
+      color: $text-color;
+      text-align: center;
+      box-shadow: $shadow-default;
+      h3 {
+        margin-bottom: $spacing-xxs;
         color: $primary-color;
-        margin-bottom: $spacing-xs;
       }
-
-      .description {
-        font-size: $font-size-xxs;
-        color: $text-secondary;
-        line-height: 1.6;
+      .upcoming-skill-item {
+        display: inline-block;
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: $spacing-xxs;
+          text-decoration: none;
+          color: inherit;
+          font-weight: 600;
+          transition: transform 0.2s ease;
+          &:hover { transform: scale(1.05); }
+          img, .webp-icon {
+            width: 200px;
+            height: 100px;
+            object-fit: contain;
+            filter: invert(1);
+          }
+        }
       }
     }
   }
 
   @include respond-to(lg) {
-    .about {
-      padding-top: $spacing-md;
-
-      .action-buttons-container {
-        margin-top: $spacing-md;
-      }
-    }
+    .about { padding-top: $spacing-md; }
   }
 
   @include respond-to(md) {
     padding: $spacing-md $spacing-sm;
-
     .home-column {
       max-width: 100%;
-
-      .image-wrapper {
-        width: 150px;
-        height: 150px;
-      }
+      .image-wrapper { width: 150px; height: 150px; }
     }
-
-    .about,
-    .experience-section,
-    .education-section {
+    .about {
       padding: $spacing-md;
-
-      h2 {
-        font-size: $font-size-md;
-      }
+      h2 { font-size: $font-size-md; }
     }
-
-    .education-section {
-      margin-top: $spacing-md;
-    }
-
-    .experience-section,
-    .education-section {
-      &::before {
-        display: none;
-      }
-    }
-
-    .experience-list,
-    .education-list {
-      gap: $spacing-sm;
-
-      .card {
-        padding: $spacing-sm;
-        border-radius: $border-radius-sm;
-      }
-    }
+    .competencies-section { padding: $spacing-md; }
   }
+  
 
   @include respond-to(sm) {
-    padding: $spacing-md $spacing-xs;
+    padding: $spacing-sm $spacing-xxs; 
+
+    .top-section, .bottom-section {
+      gap: $spacing-sm; 
+    }
 
     .home-column {
-      .content {
-        padding: $spacing-sm;
-
-        h1 {
-          font-size: $font-size-sm;
-        }
-
-        .subtitle {
-          font-size: $font-size-xxs;
-        }
-      }
+      .image-wrapper { width: 130px; height: 130px; } 
+      h1 { font-size: $font-size-sm; } 
+      .content { padding: $spacing-xs; }
     }
 
-    .about,
-    .experience-section,
-    .education-section {
-      padding: $spacing-sm $spacing-xs;
-
-      h2 {
-        font-size: $font-size-md;
-        margin-bottom: $spacing-sm;
-      }
-
-      p {
-        font-size: $font-size-xxs;
-      }
+    .about {
+      padding: $spacing-sm;
+      h2 { font-size: $font-size-sm; }
+      p { font-size: $font-size-xxs; }
     }
-  }
-
-  @media screen and (max-width: 420px) {
-    .about h2,
-    .experience-section h2,
-    .education-section h2 {
-      font-size: $font-size-xs !important;
+    
+    .competencies-section {
+      padding: $spacing-sm;
+      h2 { font-size: $font-size-sm; }
+      .tech-list { gap: $spacing-sm; } 
     }
   }
 }
-
