@@ -1,5 +1,5 @@
-@use "~styles/layout/variables" as *;
-@use "~styles/layout/mixins" as *;
+@use "~styles/layout/_variables" as *;
+@use "~styles/layout/_mixins" as *;
 
 .contact-section {
   @include background-overlay(true);
@@ -65,7 +65,7 @@
     flex: 1;
     width: 100%;
     max-width: 500px;
-    background-color: white;
+    background-color: $background-color;
     padding: $spacing-sm;
     border-radius: $border-radius-lg;
     box-shadow: $shadow-card;
@@ -76,19 +76,7 @@
 
     input,
     textarea {
-      width: 100%;
-      padding: $spacing-xxs;
-      font-size: $font-size-xxs;
-      border: 1px solid #ddd;
-      border-radius: $border-radius-sm;
-      font-family: inherit;
-      transition: all 0.3s ease;
-
-      &:focus {
-        outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 5px rgba($primary-color, 0.4);
-      }
+      @include form-field;
     }
 
     textarea {

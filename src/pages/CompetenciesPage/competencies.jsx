@@ -1,5 +1,8 @@
 import React from "react";
-import { experiences, diplomes } from "../CompetenciesPage/data/competenciesData";
+import {
+  experiences,
+  diplomes,
+} from "../CompetenciesPage/data/competenciesData";
 import ExperienceSection from "../CompetenciesPage/ExperienceSection";
 import EducationSection from "../CompetenciesPage/EducationSection";
 

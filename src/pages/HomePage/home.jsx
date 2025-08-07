@@ -102,7 +102,7 @@ const Home = () => {
               De l’art culinaire à l’art du pixel-perfect ! Depuis mon enfance,
               deux passions m’animent : la cuisine, pour le plaisir de créer et
               de partager, et l’informatique, pour son univers fascinant de
-              technologie et de créativité. Pendant plus de 15 ans dans la
+              technologie et de créativité. Pendant, 15 ans dans la
               restauration, j’ai développé un véritable sens de l’expérience
               utilisateur, en apprenant à anticiper les besoins des clients et à
               créer des moments marquants grâce à des services personnalisés et

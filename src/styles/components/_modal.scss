@@ -1,5 +1,5 @@
-@use "~styles/layout/variables" as *;
-@use "~styles/layout/mixins" as *;
+@use "~styles/layout/_variables" as *;
+@use "~styles/layout/_mixins" as *;
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -14,7 +14,7 @@
 }
 
 .modal-content {
-  background-color: white;
+  background-color: $background-color;
   padding: 1.5rem 2rem;
   border-radius: $border-radius-lg;
   box-shadow: $shadow-card;

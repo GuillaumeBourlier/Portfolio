@@ -19,21 +19,55 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+      {/* Logo */}
       <h2 className="nav-title">
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
           <img src={logo} alt="Logo" className="nav-logo" />
         </Link>
       </h2>
 
+      {!isMenuOpen && (
+        <button
+          className="burger-menu"
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Ouvrir le menu"
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+      )}
+
+      {/* Croix centrée (mobile/tablette) */}
+      {isMenuOpen && (
+        <button
+          className="close-menu"
+          onClick={() => setIsMenuOpen(false)}
+          aria-label="Fermer le menu"
+        >
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+      )}
+
+      {/* Icône contraste desktop */}
       <button
-        className={`burger-menu ${isMenuOpen ? "open" : ""}`}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Ouvrir ou fermer le menu de navigation"
+        className="contrast-icon desktop"
+        onClick={toggleTheme}
+        aria-label="Changer le contraste"
       >
-        <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" />
+        <FontAwesomeIcon icon={faCircleHalfStroke} />
       </button>
 
+      {/* Menu burger */}
       <div className={`nav-right ${isMenuOpen ? "open" : ""}`}>
+        {/* Icône contraste mobile */}
+        <button
+          className="contrast-icon mobile"
+          onClick={toggleTheme}
+          aria-label="Changer le contraste"
+        >
+          <FontAwesomeIcon icon={faCircleHalfStroke} />
+        </button>
+
+        {/* Liens navigation */}
         <ul>
           <li>
             <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
@@ -58,21 +92,6 @@ function Navbar() {
               <FontAwesomeIcon icon={faEnvelope} />
               <span className="nav-text">Contact</span>
             </NavLink>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                toggleTheme();
-                setIsMenuOpen(false);
-              }}
-              role="button"
-              aria-label="Changer le contraste"
-            >
-              <FontAwesomeIcon icon={faCircleHalfStroke} />
-              <span className="nav-text">Contraste</span>
-            </a>
           </li>
         </ul>
       </div>

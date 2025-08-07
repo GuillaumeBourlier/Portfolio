@@ -1,5 +1,5 @@
-@use "~styles/layout/variables" as *;
-@use "~styles/layout/mixins" as *;
+@use "~styles/layout/_variables" as *;
+@use "~styles/layout/_mixins" as *;
 
 .loader-container {
   @include background-overlay($blur: true);

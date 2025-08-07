@@ -1,4 +1,4 @@
-@use "~styles/layout/variables" as *;
+@use "~styles/layout/_variables" as *;
 
 @mixin background-overlay($blur: false) {
   background-image: url("@/assets/img_background.webp");
@@ -24,7 +24,7 @@
   }
 }
 
-@mixin card-style($background: white) {
+@mixin card-style($background: $background-color) {
   background-color: $background;
   border-radius: $border-radius-sm;
   box-shadow: $shadow-default;

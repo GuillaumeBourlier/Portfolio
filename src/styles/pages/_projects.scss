@@ -1,5 +1,5 @@
-@use "~styles/layout/variables" as *;
-@use "~styles/layout/mixins" as *;
+@use "~styles/layout/_variables" as *;
+@use "~styles/layout/_mixins" as *;
 
 .projects-container {
   @include background-overlay(true);
@@ -26,7 +26,6 @@
     gap: $spacing-sm;
     padding: 0;
 
-    // L'effet de survol est maintenant conditionnel aux appareils avec souris
     @media (hover: hover) {
       &:hover > .project-card:not(:hover) {
         opacity: 0.3;
@@ -43,7 +42,7 @@
     flex-direction: column;
     cursor: pointer;
 
-    // Le survol ne s'applique que sur les appareils qui le supportent
+
     @media (hover: hover) {
       &:hover {
         transform: translateY(-5px);
@@ -97,7 +96,7 @@
         gap: 0.5rem;
 
         &:hover {
-          background-color: $primary-color;
+          background-color: $primary-hover-color;
         }
       }
     }
@@ -170,7 +169,7 @@
         gap: 0.4rem;
 
         &:hover {
-          background-color: $primary-color;
+          background-color: $primary-hover-color;
         }
       }
     }

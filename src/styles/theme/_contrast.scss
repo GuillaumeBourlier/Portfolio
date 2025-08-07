@@ -1,0 +1,99 @@
+@use "~styles/layout/_variables" as *;
+@use "~styles/layout/_mixins" as *;
+
+.app.high-contrast {
+  background-color: $background-color-white !important;
+
+  .home-section, .projects-container, .contact-section, .competencies-page, .error-page {
+    background-image: none !important;
+    background-color: transparent !important;
+    &::before { 
+      background-color: transparent !important; 
+      backdrop-filter: none !important; 
+    }
+  }
+
+  // --- STYLES NAVBAR ET FOOTER EN CONTRASTE ---
+  .navbar, .footer {
+    background-color: $background-color-white !important;
+    border-bottom: 2px solid #000000;
+    box-shadow: none;
+  }
+  .footer { 
+    border-top: 2px solid #000000; 
+    border-bottom: none; 
+  }
+  .navbar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-logo,
+  .footer-logo {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(91%) saturate(2483%) hue-rotate(195deg) brightness(94%) contrast(101%);
+  }
+
+  .burger-menu,
+  .contrast-icon {
+    color: $text-dark !important;
+  }
+
+  .about, .bottom-section, .card, .competency-card, .experience-card, .education-card, .tech-item, .experience-section, .education-section, .project-card, .more-projects-card, .contact-form, .contact-info, .coming-soon {
+    background-color: $background-color-white !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none;
+    backdrop-filter: none; 
+  }
+  
+  .more-projects-card {
+    .other-project-item {
+      background-color: $background-color;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, p, li, span, .description, .subtitle, label, .scroll-indicator {
+    color: $text-dark !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  .coming-soon img {
+    background-color: $background-color-white; 
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  a { 
+    color: $background-color-blue !important;
+    text-decoration: underline !important;
+  } 
+  a:hover { 
+    color: $background-color-blue !important; 
+  }
+  
+  .cv-button, .contact-form button, .project-links a, .other-project-links a, .button-link {
+    background-color: $background-color-blue !important;
+    color: $text-color !important;
+    border: 2px solid #000000 !important;
+    text-decoration: none !important;
+    
+    &:hover { 
+      background-color: $primary-hover-color !important;
+    }
+  }
+  
+  .scroll-button {
+    color: $text-dark !important;
+    border-color: #000000 !important;
+    &:hover {
+      background-color: $background-dark !important;
+      color: $text-color !important;
+    }
+  }
+  
+  .soft-skills .skill-tag,
+  .tech-tag {
+    background-color: $background-color-blue !important;
+    color: $text-color !important;
+    border: 1px solid #000000 !important;
+  }
+}

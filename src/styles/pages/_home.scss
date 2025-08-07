@@ -1,5 +1,5 @@
-@use "~styles/layout/variables" as *;
-@use "~styles/layout/mixins" as *;
+@use "~styles/layout/_variables" as *;
+@use "~styles/layout/_mixins" as *;
 
 .home-section {
   @include background-overlay(true);
@@ -55,7 +55,11 @@
       overflow: hidden;
       margin-bottom: 0;
       box-shadow: $shadow-default;
-      img { width: 100%; height: 100%; object-fit: cover; }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     h1 {
@@ -91,7 +95,9 @@
         a {
           color: $text-color;
           transition: color 0.3s;
-          &:hover { color: $primary-color; }
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
 
@@ -185,13 +191,15 @@
     }
 
     .competencies-intro {
+      text-align: center;
       font-size: $font-size-xs;
       color: $text-secondary;
       max-width: $container-md;
       margin: 0 auto $spacing-lg;
       line-height: 1.5;
       font-style: italic;
-      // AJOUTÉ : Réduction du padding pour le texte d'intro
+      margin-bottom: 1.5rem;
+
       @include respond-to(sm) {
         padding: 0 $spacing-xxs;
       }
@@ -228,7 +236,9 @@
             margin-top: $spacing-xxs;
             font-size: $font-size-xs;
           }
-          svg, .svg-icon, img {
+          svg,
+          .svg-icon,
+          img {
             width: 40px;
             height: 40px;
             object-fit: contain;
@@ -261,8 +271,11 @@
           color: inherit;
           font-weight: 600;
           transition: transform 0.2s ease;
-          &:hover { transform: scale(1.05); }
-          img, .webp-icon {
+          &:hover {
+            transform: scale(1.05);
+          }
+          img,
+          .webp-icon {
             width: 200px;
             height: 100px;
             object-fit: contain;
@@ -274,46 +287,70 @@
   }
 
   @include respond-to(lg) {
-    .about { padding-top: $spacing-md; }
+    .about {
+      padding-top: $spacing-md;
+    }
   }
 
   @include respond-to(md) {
     padding: $spacing-md $spacing-sm;
     .home-column {
       max-width: 100%;
-      .image-wrapper { width: 150px; height: 150px; }
+      .image-wrapper {
+        width: 150px;
+        height: 150px;
+      }
     }
     .about {
       padding: $spacing-md;
-      h2 { font-size: $font-size-md; }
+      h2 {
+        font-size: $font-size-md;
+      }
     }
-    .competencies-section { padding: $spacing-md; }
+    .competencies-section {
+      padding: $spacing-md;
+    }
   }
-  
 
   @include respond-to(sm) {
-    padding: $spacing-sm $spacing-xxs; 
+    padding: $spacing-sm $spacing-xxs;
 
-    .top-section, .bottom-section {
-      gap: $spacing-sm; 
+    .top-section,
+    .bottom-section {
+      gap: $spacing-sm;
     }
 
     .home-column {
-      .image-wrapper { width: 130px; height: 130px; } 
-      h1 { font-size: $font-size-sm; } 
-      .content { padding: $spacing-xs; }
+      .image-wrapper {
+        width: 130px;
+        height: 130px;
+      }
+      h1 {
+        font-size: $font-size-sm;
+      }
+      .content {
+        padding: $spacing-xs;
+      }
     }
 
     .about {
       padding: $spacing-sm;
-      h2 { font-size: $font-size-sm; }
-      p { font-size: $font-size-xxs; }
+      h2 {
+        font-size: $font-size-sm;
+      }
+      p {
+        font-size: $font-size-xxs;
+      }
     }
-    
+
     .competencies-section {
       padding: $spacing-sm;
-      h2 { font-size: $font-size-sm; }
-      .tech-list { gap: $spacing-sm; } 
+      h2 {
+        font-size: $font-size-sm;
+      }
+      .tech-list {
+        gap: $spacing-sm;
+      }
     }
   }
 }
