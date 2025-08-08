@@ -63,7 +63,7 @@ const otherProjects = [
   },
   {
     id: 8,
-    title: "Mon Portfolio",
+    title: "Mon Portfolio - Utilisation de React avec Vite, React Router,Scss",
     sourceLink: "https://github.com/GuillaumeBourlier/Portfolio",
   },
 ];

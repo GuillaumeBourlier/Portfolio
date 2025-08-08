@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Modal from "../../components/Form/Modal";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mnnzvyek");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
   const formRef = useRef();
 
   useEffect(() => {
@@ -14,6 +16,7 @@ const Contact = () => {
       if (formRef.current) {
         formRef.current.reset();
       }
+      setCaptchaToken(null);
       timer = setTimeout(() => {
         setIsModalOpen(false);
       }, 4000);
@@ -23,6 +26,19 @@ const Contact = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
+
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    if (!captchaToken) {
+      alert("Veuillez valider le reCAPTCHA.");
+      return;
+    }
+    handleSubmit(e);
   };
 
   return (
@@ -47,7 +63,7 @@ const Contact = () => {
             initiatives.
           </p>
         </div>
-        <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+        <form ref={formRef} className="contact-form" onSubmit={onFormSubmit}>
           <label htmlFor="name">Votre nom</label>
           <input
             id="name"
@@ -58,6 +74,7 @@ const Contact = () => {
             required
           />
           <ValidationError prefix="Name" field="name" errors={state.errors} />
+
           <label htmlFor="email">Votre email</label>
           <input
             id="email"
@@ -68,6 +85,7 @@ const Contact = () => {
             required
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
+
           <label htmlFor="message">Votre message</label>
           <textarea
             id="message"
@@ -81,6 +99,12 @@ const Contact = () => {
             field="message"
             errors={state.errors}
           />
+
+          <ReCAPTCHA
+            sitekey="6Lcljp0rAAAAADVuSAPuOsDHsfs_nFMtg9PGy-sc"
+            onChange={handleCaptchaChange}
+          />
+
           <button type="submit" disabled={state.submitting}>
             Envoyer
           </button>
