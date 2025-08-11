@@ -105,7 +105,11 @@ const Contact = () => {
             onChange={handleCaptchaChange}
           />
 
-          <button type="submit" disabled={state.submitting}>
+          <button
+            type="submit"
+            disabled={state.submitting}
+            aria-label="Envoyer le formulaire de contact"
+          >
             Envoyer
           </button>
         </form>

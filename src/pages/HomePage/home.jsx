@@ -1,16 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLinkedin,
-  faGithub,
-  faHtml5,
-  faCss3Alt,
-  faJsSquare,
-  faReact,
-} from "@fortawesome/free-brands-svg-icons";
+  FaHtml5,
+  FaCss3Alt,
+  FaSquareJs,
+  FaReact,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa6";
+import { SiRedux, SiNextdotjs } from "react-icons/si";
+
 import profile from "@/assets/photo.webp";
 import cv from "@/assets/CV-Guillaume-Bourlier.pdf";
-import reduxLogo from "@/assets/redux.webp";
-import nextjsLogo from "@/assets/nextjs-logo.webp";
 
 const Home = () => {
   const softSkills = [
@@ -22,36 +21,32 @@ const Home = () => {
   const techs = [
     {
       label: "HTML",
-      icon: faHtml5,
-      type: "fontawesome",
+      Icon: FaHtml5,
       color: "#E34F26",
       link: "https://developer.mozilla.org/fr/docs/Web/HTML",
     },
     {
       label: "CSS",
-      icon: faCss3Alt,
-      type: "fontawesome",
+      Icon: FaCss3Alt,
       color: "#1572B6",
       link: "https://developer.mozilla.org/fr/docs/Web/CSS",
     },
     {
       label: "JavaScript",
-      icon: faJsSquare,
-      type: "fontawesome",
+      Icon: FaSquareJs,
       color: "#F7DF1E",
       link: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
     },
     {
       label: "React",
-      icon: faReact,
-      type: "fontawesome",
+      Icon: FaReact,
       color: "#61DAFB",
       link: "https://fr.react.dev/",
     },
     {
       label: "Redux",
-      icon: reduxLogo,
-      type: "webp",
+      Icon: SiRedux,
+      color: "#764ABC",
       link: "https://redux.js.org/",
     },
   ];
@@ -74,7 +69,7 @@ const Home = () => {
                   rel="noopener noreferrer"
                   aria-label="Profil LinkedIn de Guillaume Bourlier"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                  <FaLinkedin size="2em" className="social-icon" />
                 </a>
                 <a
                   href="https://github.com/GuillaumeBourlier"
@@ -82,7 +77,7 @@ const Home = () => {
                   rel="noopener noreferrer"
                   aria-label="Profil GitHub de Guillaume Bourlier"
                 >
-                  <FontAwesomeIcon icon={faGithub} size="2x" />
+                  <FaGithub size="2em" className="social-icon" />
                 </a>
               </div>
               <a
@@ -147,21 +142,12 @@ const Home = () => {
                     rel="noopener noreferrer"
                     aria-label={`En savoir plus sur ${tech.label}`}
                   >
-                    {tech.type === "fontawesome" ? (
-                      <FontAwesomeIcon
-                        icon={tech.icon}
-                        size="2x"
-                        style={{ color: tech.color }}
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <img
-                        src={tech.icon}
-                        alt={tech.label}
-                        className="svg-icon"
-                        loading="lazy"
-                      />
-                    )}
+                    <tech.Icon
+                      size="2em"
+                      style={{ color: tech.color }}
+                      aria-hidden="true"
+                      className="tech-icon"
+                    />
                     <span>{tech.label}</span>
                   </a>
                 </li>
@@ -170,19 +156,18 @@ const Home = () => {
 
             <div className="coming-soon">
               <h3>In progress</h3>
-              <div className="upcoming-skill-item">
-                <a
-                  href="https://nextjs.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="En savoir plus sur Next.js"
-                >
-                  <img
-                    src={nextjsLogo}
-                    alt="Logo Next.js"
-                    className="webp-icon"
-                  />
-                </a>
+              <div className="upcoming-skills-list">
+                <div className="upcoming-skill-item">
+                  <a
+                    href="https://nextjs.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="En savoir plus sur Next.js"
+                  >
+                    <SiNextdotjs size="2em" style={{ color: "#000000" }} className="tech-icon" />
+                    <span>Next.js</span>
+                  </a>
+                </div>
               </div>
             </div>
           </section>

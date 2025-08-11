@@ -13,18 +13,17 @@
     }
   }
 
-  // --- STYLES NAVBAR ET FOOTER EN CONTRASTE ---
   .navbar, .footer {
     background-color: $background-color-white !important;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid $border-dark;
     box-shadow: none;
   }
   .footer { 
-    border-top: 2px solid #000000; 
+    border-top: 2px solid $border-dark; 
     border-bottom: none; 
   }
   .navbar ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: $background-lightdark;
   }
 
   .nav-logo,
@@ -39,7 +38,7 @@
 
   .about, .bottom-section, .card, .competency-card, .experience-card, .education-card, .tech-item, .experience-section, .education-section, .project-card, .more-projects-card, .contact-form, .contact-info, .coming-soon {
     background-color: $background-color-white !important;
-    border: 2px solid #000000 !important;
+    border: 2px solid $border-dark !important;
     box-shadow: none;
     backdrop-filter: none; 
   }
@@ -53,7 +52,13 @@
   h1, h2, h3, h4, h5, h6, p, li, span, .description, .subtitle, label, .scroll-indicator {
     color: $text-dark !important;
     text-shadow: none !important;
-    background-color: transparent !important;
+  }
+
+  
+  .projects-container h2,
+  .contact-info h2 {
+    background-color: $background-color-white !important;
+    border: 2px solid $border-dark;
   }
 
   .coming-soon img {
@@ -70,20 +75,32 @@
     color: $background-color-blue !important; 
   }
   
-  .cv-button, .contact-form button, .project-links a, .other-project-links a, .button-link {
+  .cv-button, .contact-form button, .button-link {
     background-color: $background-color-blue !important;
     color: $text-color !important;
-    border: 2px solid #000000 !important;
+    border: 2px solid$border-dark !important;
     text-decoration: none !important;
     
     &:hover { 
       background-color: $primary-hover-color !important;
     }
   }
+
+  .project-links a, .other-project-links a {
+    background-color: $background-color-white !important;
+    color: $text-dark !important;
+    border: 2px solid $border-dark !important;
+    text-decoration: none !important;
+    
+    &:hover { 
+      background-color: $background-color-blue !important;
+      color: $text-color !important;
+    }
+  }
   
   .scroll-button {
     color: $text-dark !important;
-    border-color: #000000 !important;
+    border-color: $border-dark !important;
     &:hover {
       background-color: $background-dark !important;
       color: $text-color !important;
@@ -94,6 +111,6 @@
   .tech-tag {
     background-color: $background-color-blue !important;
     color: $text-color !important;
-    border: 1px solid #000000 !important;
+    border: 1px solid $border-dark !important;
   }
 }

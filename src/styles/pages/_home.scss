@@ -66,13 +66,13 @@
       font-size: $font-size-md;
       margin-top: $spacing-lg;
       color: $text-color;
-      text-shadow: $shadow-text;
+      background-color: $background-lightdark;
     }
 
     .subtitle {
       font-size: $font-size-xs;
       color: $text-secondary;
-      text-shadow: $shadow-text;
+      background-color: $background-lightdark;
       margin-top: $spacing-sm;
       margin-bottom: 5px;
       line-height: 1.4;
@@ -110,8 +110,6 @@
         width: auto;
         &:hover {
           background-color: rgba($primary-hover-color, 0.76);
-          transform: translateY(-5px);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -250,7 +248,7 @@
     .coming-soon {
       max-width: $container-sm;
       margin: $spacing-md auto 0;
-      background-color: $background-coming-soon;
+      background-color: $background-tech;
       border-radius: $border-radius-md;
       padding: $spacing-xs $spacing-sm;
       color: $text-color;
@@ -271,9 +269,7 @@
           color: inherit;
           font-weight: 600;
           transition: transform 0.2s ease;
-          &:hover {
-            transform: scale(1.05);
-          }
+
           img,
           .webp-icon {
             width: 200px;

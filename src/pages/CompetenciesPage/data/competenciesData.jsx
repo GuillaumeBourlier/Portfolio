@@ -67,7 +67,7 @@ export const experiences = [
   {
     id: 3,
     title: "Chef de cuisine & Management en restauration",
-    company: "Elior / Sodexo / Accord / Les Galopins",
+    company: "Elior / Sodexo / Accor / Les Galopins",
     period: "2004 - 2019",
     description:
       "Durant 15 ans, j'ai évolué de Cuisinier à Chef, gérant des productions pour des sites allant jusqu'à 4000 couverts. J'ai piloté l'élaboration des menus, la gestion des stocks, l'encadrement d'équipes et le respect des normes qualité (HACCP, INCO), développant ainsi mon leadership, ma rigueur organisationnelle et ma capacité à résoudre des problèmes complexes sous pression.",

@@ -5,19 +5,20 @@ import path from "path";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  base: '/Portfolio/',
+  base: "/Portfolio/",
   plugins: [
     react(),
-    visualizer({
-      open: true, 
-      filename: 'stats.html', 
-    }),
+    process.env.ANALYZE &&
+      visualizer({
+        open: true,
+        filename: "stats.html",
+      }),
   ],
   server: {
     port: 5173,
     strictPort: true,
     host: true,
-    open: '/Portfolio/'
+    open: "/Portfolio/",
   },
   css: {
     preprocessorOptions: {
@@ -30,26 +31,26 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
+    outDir: "dist",
+    assetsDir: "assets",
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'index.html'),
-        404: path.resolve(__dirname, '404.html')
-      }
-    }
+        main: path.resolve(__dirname, "index.html"),
+        404: path.resolve(__dirname, "404.html"),
+      },
+    },
   },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "~styles": path.resolve(__dirname, "./src/styles")
+      "~styles": path.resolve(__dirname, "./src/styles"),
     },
   },
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: './setupTests.js',
+    environment: "jsdom",
+    setupFiles: "./setupTests.jsx",
     css: true,
   },
 });

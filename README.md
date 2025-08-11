@@ -16,7 +16,7 @@ Ce dépôt contient le code source de mon portfolio personnel, conçu pour prés
 -   **Présentation des projets** : Galerie de mes réalisations avec liens vers les démos et le code source.
 -   **Section "À propos"** : Un résumé de mon parcours et de mes ambitions.
 -   **Compétences techniques** : Liste des technologies que je maîtrise.
--   **Formulaire de contact fonctionnel** : Intégration avec EmailJS pour une prise de contact facile.
+-   **Formulaire de contact fonctionnel** : Intégration avec Formspree et reCAPTCHA pour une prise de contact facile et sécurisée.
 -   **Entièrement Responsive** : Expérience utilisateur optimale sur mobile, tablette et ordinateur.
 -   **Optimisé pour le SEO** : Utilisation de balises meta, sitemap, `robots.txt` et données structurées (Schema.org) pour une meilleure visibilité sur les moteurs de recherche.
 
@@ -52,4 +52,3 @@ Pour lancer ce projet en local, suivez ces étapes :
     npm run dev
     ```
     Le site sera alors accessible à l'adresse `http://localhost:5173/` (ou un autre port si celui-ci est occupé).
-
