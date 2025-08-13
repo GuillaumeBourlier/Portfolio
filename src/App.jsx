@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useContext, Suspense, lazy } from "react";
 import { ThemeProvider, ThemeContext } from "./components/Theme/ThemeContext";
 import Navbar from "./components/NavBar/Navbar";
@@ -25,7 +25,7 @@ function AppContent() {
       {isLoading ? (
         <Loader onFinish={handleLoaderFinish} />
       ) : (
-        <Router>
+        <Router basename="/Portfolio">
           <div className={`app ${theme}`}>
             <Navbar />
             <Suspense fallback={<Loader />}>

@@ -101,7 +101,7 @@ const Contact = () => {
           />
 
           <ReCAPTCHA
-            sitekey="6Lcljp0rAAAAADVuSAPuOsDHsfs_nFMtg9PGy-sc"
+            sitekey="6LfLm5grAAAAAG0rZLsiQwuEH1JUbO4fjtK9hN-M"
             onChange={handleCaptchaChange}
           />
 
