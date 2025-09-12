@@ -33,6 +33,22 @@
     }
   }
 
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-xxs;
+    margin: $spacing-xxs 0;
+  }
+
+  .tech-tag {
+    background-color: rgba($primary-color, 0.2);
+    color: $primary-color;
+    padding: 0.4rem 0.8rem;
+    border-radius: $border-radius-lg;
+    font-size: $font-size-xxs;
+    font-weight: 500;
+  }
   .project-card {
     @include card-style($background-tech);
     padding: $spacing-xs;
@@ -41,7 +57,6 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
-
 
     @media (hover: hover) {
       &:hover {
@@ -117,6 +132,11 @@
       margin-bottom: $spacing-sm;
     }
 
+    .tech-tag {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+    }
+
     .other-projects-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -136,11 +156,28 @@
       flex-direction: column;
       gap: $spacing-xxs;
 
-
       @media (min-width: $screen-md) {
         flex-direction: row;
         justify-content: space-between;
         gap: $spacing-sm;
+      }
+
+      .other-project-info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-xxs;
+        align-items: center;
+
+        @media (min-width: $screen-md) {
+          align-items: flex-start;
+        }
+      }
+
+      .technologies {
+        @media (min-width: $screen-md) {
+          justify-content: flex-start;
+        }
       }
     }
 
@@ -149,7 +186,7 @@
       font-size: $font-size-xxs;
       color: $text-secondary;
       text-align: center;
-      
+
       @media (min-width: $screen-md) {
         text-align: left;
       }
@@ -194,8 +231,8 @@
     }
 
     .project-card {
-      height: auto; 
-      transition: none; 
+      height: auto;
+      transition: none;
 
       .project-links {
         flex-direction: row;
@@ -205,12 +242,12 @@
       }
     }
   }
-  
+
   @include respond-to(sm) {
     padding: $spacing-md $spacing-xxs;
     h2 {
-        font-size: $font-size-sm;
-        margin-bottom: $spacing-md;
+      font-size: $font-size-sm;
+      margin-bottom: $spacing-md;
     }
   }
 }

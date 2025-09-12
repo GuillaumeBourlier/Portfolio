@@ -1,13 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useContext, Suspense, lazy } from "react";
 import { ThemeProvider, ThemeContext } from "./components/Theme/ThemeContext";
 import Navbar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 
-
 const Home = lazy(() => import("./pages/HomePage/home"));
-const Competencies = lazy(() => import("./pages/CompetenciesPage/competencies"));
+const Competencies = lazy(() =>
+  import("./pages/CompetenciesPage/competencies")
+);
 const Projects = lazy(() => import("./pages/ProjectsPage/projects"));
 const Contact = lazy(() => import("./pages/ContactPage/contact"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"));
@@ -25,7 +26,7 @@ function AppContent() {
       {isLoading ? (
         <Loader onFinish={handleLoaderFinish} />
       ) : (
-        <Router basename="/Portfolio">
+        <Router>
           <div className={`app ${theme}`}>
             <Navbar />
             <Suspense fallback={<Loader />}>

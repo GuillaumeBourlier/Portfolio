@@ -47,9 +47,6 @@ export const experiences = [
           <HashLink to="/projects" className="button-link">
             <FontAwesomeIcon icon={faFolderOpen} /> Voir les projets associés
           </HashLink>
-          <HashLink to="/#competencies" className="button-link tech-button">
-            <FontAwesomeIcon icon={faLaptopCode} /> Mes technologies utilisées
-          </HashLink>
         </div>
       </>
     ),

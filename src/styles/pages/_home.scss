@@ -244,42 +244,6 @@
         }
       }
     }
-
-    .coming-soon {
-      max-width: $container-sm;
-      margin: $spacing-md auto 0;
-      background-color: $background-tech;
-      border-radius: $border-radius-md;
-      padding: $spacing-xs $spacing-sm;
-      color: $text-color;
-      text-align: center;
-      box-shadow: $shadow-default;
-      h3 {
-        margin-bottom: $spacing-xxs;
-        color: $primary-color;
-      }
-      .upcoming-skill-item {
-        display: inline-block;
-        a {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: $spacing-xxs;
-          text-decoration: none;
-          color: inherit;
-          font-weight: 600;
-          transition: transform 0.2s ease;
-
-          img,
-          .webp-icon {
-            width: 200px;
-            height: 100px;
-            object-fit: contain;
-            filter: invert(1);
-          }
-        }
-      }
-    }
   }
 
   @include respond-to(lg) {
