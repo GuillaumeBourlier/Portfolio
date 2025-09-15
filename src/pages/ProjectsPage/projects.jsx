@@ -128,7 +128,7 @@ const mainProjects = [
     image: ohmyfoodImage,
     technologies: ["HTML", "Sass", "Animations"],
   },
-    {
+  {
     id: 2,
     title: "Projet Kasa",
     description:
